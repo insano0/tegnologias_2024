@@ -14,36 +14,40 @@ body {
 
 /* Header styles */
 header {
+    display: flex;
+    flex-direction: row;             /* Organizar todos */
+    justify-content: space-between;  /* Centrar */
+    align-items: center;             /* Alinear */
     background-color: #35424a;
     color: #ffffff;
-    padding: 1rem 0;
-    position: fixed;
+    padding: 30px;
     width: 100%;
     top: 0;
-    z-index: 1000;
+
+}
+
+img {
+
+    max-width: 100%;
+
+}
+
+.LOGO{
+    background: red;
+    max-width: 5rem;
+    max-height: 100%;
 }
 
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+
+    width: fit-content;
 }
 
 nav ul {
-    list-style-type: none;
+
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #e8491d;
 }
 
 /* Main content styles */

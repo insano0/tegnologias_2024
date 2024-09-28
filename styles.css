@@ -110,6 +110,7 @@ a:hover {                                           /* Estilo cuando el cursor p
 }
 
 .dropdown-menu {
+    
     display: none;
     position: relative;
     background-color: #f9f9f9;
@@ -117,6 +118,7 @@ a:hover {                                           /* Estilo cuando el cursor p
     max-width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 500;
+    margin-top: 10px;
 }
 
 .dropdown-menu li {
@@ -140,6 +142,13 @@ a:hover {                                           /* Estilo cuando el cursor p
     position: absolute;
 }
 
+.dropdown a:hover{
+                   
+    justify-self: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
+    
+}
 .arrow {
     margin-left: 8px;
 }

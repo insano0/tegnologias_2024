@@ -1,67 +1,115 @@
-*{
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
 }
 
-.container{
-    height: 110px;
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 1rem 0;
+    position: fixed;
     width: 100%;
-    background: #28586d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    top: 0;
+    z-index: 1000;
 }
 
-.menu{
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to right, #ffffff, #4791b3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 10px 0px rgba(0,0,0,0.1);
-    overflow: hidden;
-   
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/*hola*/ 
- /*asdasdasdasd
- asideasd
- asdas
- */
-.menu div{
-    padding: 0px 50px;
-    font-size: 50px;
-    cursor: pointer;
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e8491d;
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 20px;
+}
+
+section {
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #35424a;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Services list styles */
+#servicios ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#servicios li {
+    margin-bottom: 10px;
     position: relative;
-    transition: transform 1s;
 }
 
-/*.menu div span{
-    position: absolute;
-    color: #262497;
-    width: 100%;
-    height: 100%;
-    padding: 20px 50px;
-    left: 0;
-    top: 100%;
-    border-bottom: 3px solid #5653ff;
+#servicios li::before {
+    content: "•";
+    color: #e8491d;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
-*/
 
+    nav ul li {
+        margin-bottom: 10px;
+    }
 
-.menu div:hover{
-    transform: scale(1.2);
-    color: #5653ff;
-    padding-bottom: 5px;
-    border-bottom: 3px solid #5653ff;
-    overflow: hidden;
-}
-
-.h1{
-    font-size: 2px;
-    position: center;
+    main {
+        margin-top: 200px;
+    }
 }

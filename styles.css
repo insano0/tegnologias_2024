@@ -11,7 +11,7 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header styles */
+/* Header styles............................................................................................... */
 header {
     display: flex;
     flex-direction: row;             /* Organizar todos */
@@ -102,7 +102,7 @@ a:hover {                                           /* Estilo cuando el cursor p
     overflow: hidden;
 }
 
-/* Menu Desplegable */
+/* Menu Desplegable............................................................................................... */
 
 .dropdown {
     position: relative;
@@ -154,21 +154,20 @@ a:hover {                                           /* Estilo cuando el cursor p
 }
 
 
-/* Main content styles */
+/* Main content styles ...............................................................................................*/
+
 main {
+    padding-left: 10px;
+    padding-right: 10px;
     display: block;
     align-items: center;             /* Alinear */
-    background-color: aquamarine;
+    background-color: #15B0C3;
     
 }
 
-section {
-    height: 100vh; /* Añadido para ocupar toda la altura de la ventana */
-    background-color: aquamarine;   
-}
 
 .inicio{
-    display: flex; 
+    display: block; 
     justify-content: center;
     align-items: center;
     background-color: #009cf7;
@@ -178,12 +177,7 @@ section {
 section img{
     position: center;
     width: 100%;
-    height: 100%;
-
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("INICIO.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 800px;
 }
 
 .TituloInicio{
@@ -197,20 +191,24 @@ section img{
     border-radius: 5px;
 }       
 
-section .Frase{
-    display: flex;
+.FraseMotivacional{
+    padding: 15px;
+    display: block; 
     justify-content: center;
     align-items: center;
-    background-color: #009cf7;
-    height: 100vh; /* Añadido para ocupar toda la altura de la ventana */
+    background-image: radial-gradient(circle, #15B0C3 ,#0A545D);
+    height: 400px; /* Añadido para ocupar toda la altura de la ventana */
+    position: relative;
+    top: 80%;                   
 }
+
+
 h1, h2 {
     color: #fdfdfd;
     margin-bottom: 20px;
 }
 
 h1 {
-
     font-family: 'Inika', serif;
     font-size: 70px;
     font-weight: 200;

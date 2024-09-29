@@ -157,8 +157,7 @@ a:hover {                                           /* Estilo cuando el cursor p
 /* Main content styles ...............................................................................................*/
 
 main {
-    padding-left: 10px;
-    padding-right: 10px;
+
     display: block;
     align-items: center;             /* Alinear */
     background-color: #15B0C3;
@@ -182,7 +181,7 @@ section img{
 
 .TituloInicio{
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 35%;
     transform: translate(-50%, -50%);
     font-size: 24px;
@@ -191,17 +190,38 @@ section img{
     border-radius: 5px;
 }       
 
-.FraseMotivacional{
-    padding: 15px;
-    display: block; 
+.Frase {
     justify-content: center;
     align-items: center;
+    width: fit-content;
+}
+.FraseMotivacional{
+    
+    display: flex;
+    position: relative; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
     background-image: radial-gradient(circle, #15B0C3 ,#0A545D);
-    height: 400px; /* Añadido para ocupar toda la altura de la ventana */
-    position: relative;
-    top: 80%;                   
+    height: fit-content;
+    width: fit-content;
+    top: 80%;        
+    text-align: justify; /* Justifica el texto */
+    text-align-last: center; /* Centra la última línea del texto */
+    text-justify: inter-word;           
 }
 
+.arrow-down {
+    align-items: center;
+    justify-content: center;
+    max-width: 100px;
+    max-width: 100px; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid rgb(255, 255, 255);
+}
 
 h1, h2 {
     color: #fdfdfd;
@@ -221,7 +241,7 @@ h2 {
 }
 
 p {
-    margin-bottom: 15px;
+    align-items: center;
 }
 
 /* Services list styles */

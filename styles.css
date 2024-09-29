@@ -168,9 +168,9 @@ section {
 }
 
 .inicio{
-    display: flex; /* Añadido */
-    justify-content: center; /* Añadido */
-    align-items: center; /* Añadido */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     background-color: #009cf7;
     height: 100vh; /* Añadido para ocupar toda la altura de la ventana */
 }
@@ -179,27 +179,47 @@ section img{
     position: center;
     width: 100%;
     height: 100%;
+
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("INICIO.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .TituloInicio{
-    display: relative; 
-    justify-content: center; 
-    align-items: center;
-    background-color: #009cf7;
-    height: 100vh;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);  /* Fondo transparente */
+    padding: 10px;
+    border-radius: 5px;
 }       
 
+section .Frase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #009cf7;
+    height: 100vh; /* Añadido para ocupar toda la altura de la ventana */
+}
 h1, h2 {
-    color: #35424a;
+    color: #fdfdfd;
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
+
+    font-family: 'Inika', serif;
+    font-size: 70px;
+    font-weight: 200;
 }
 
 h2 {
-    font-size: 2em;
+    font-family: 'Inika', serif;
+    font-size: 32px;
+    font-weight: 50;
 }
 
 p {

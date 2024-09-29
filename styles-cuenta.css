@@ -10,12 +10,11 @@ body {
     color: white;
     line-height: 1.6;
 }
-/* Seccion de Header */
 header {
     display: flex;
-    flex-direction: row;             
-    justify-content: space-between;  
-    align-items: center;             
+    flex-direction: row;             /* Organizar todos */
+    justify-content: space-between;  /* Centrar */
+    align-items: center;             /* Alinear */
     background-image: linear-gradient(to bottom, #0A545D, #15B0C3);
     padding-left: 20px;
     padding-right: 20px;
@@ -57,6 +56,7 @@ nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    position: relative; /* Posicionar elemento */
 }
 
 nav ul li {
@@ -68,12 +68,16 @@ nav ul li {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
+    
 }
 
 nav ul li a {
     color: #f4f4f4;
     font-size: 24px;
+
+    
 }
 
 
@@ -83,9 +87,9 @@ a{
 }
   
   
-a:hover {                                           
+a:hover {                                           /* Estilo cuando el cursor pasa sobre el elemento */
     text-decoration: underline;
-    text-decoration-color: rgb(211, 211, 216);                  
+    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
 }
 
 .Perfil{
@@ -96,7 +100,7 @@ a:hover {
     overflow: hidden;
 }
 
-/* Menu Desplegable */
+/* Menu Desplegable............................................................................................... */
 
 .dropdown {
     position: relative;
@@ -104,12 +108,15 @@ a:hover {
 }
 
 .dropdown-menu {
+    
     display: none;
-    position: absolute;
+    position: relative;
     background-color: #f9f9f9;
-    max-width: fit-content;
+    justify-self: center;
+    max-width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1000;
+    z-index: 500;
+    margin-top: 10px;
 }
 
 .dropdown-menu li {
@@ -122,23 +129,26 @@ a:hover {
 .dropdown-menu li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-}
-
-.dropdown-menu li:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
     display: block;
 }
 
-.arrow {
-    margin-left: 8px;
+
+.dropdown:hover .dropdown-menu {
+    background : #323741;
+    padding: 5px;
+    display: block; /* Cambiado a block */
+    position: absolute;
 }
 
-main {
-    text-align: center;
+.dropdown a:hover{
+                   
+    justify-self: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
+    
+}
+.arrow {
+    margin-left: 8px;
 }
 
 /* Seccion de Perfil */

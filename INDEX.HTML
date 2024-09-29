@@ -47,7 +47,6 @@
                 <h1>¿Que realizo primero?</h1>
                 <h2>Amenudo nos hacemos esa pregunta antes de empezar con nuestros entrenamientos, no seria mejor entrenar con alguien con conocimientos y las capacidades para ayduarte a llegar a tu objetivo!</h2>
             </div>
-            
         </section>
 
         <section id="Frase">
@@ -59,6 +58,25 @@
             
         </section>
 
+        <section id="DEPORTES">
+            <div class="carousel">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="BOxeo.jpeg" alt="Imagen 1">
+                    </div>
+                    <div class="slide">
+                        <img src="Aerobicos.jpg" alt="Imagen 2">
+                    </div>
+                    <div class="slide">
+                        <img src="Pesas.webp" alt="Imagen 3">
+                    </div>
+                </div>
+                <button class="next" onclick="async (params) => {
+                    moveSlide(1)
+                }">&#10095;</button>
+            </div>
+        </section>
         <section id="contacto">
             <h2>Contacto</h2>
             <p>Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros.</p>

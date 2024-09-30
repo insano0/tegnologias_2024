@@ -227,6 +227,8 @@ section img{
     border-top: 100px solid rgb(255, 255, 255);
 }
 
+/* Seccion de Carrusel */
+
 .Deportes {
     
     width: 800px;
@@ -237,18 +239,20 @@ section img{
     
 }
 
-/* Seccion de Carrusel */
 .carousel {
+    margin-left: 100px;
+    margin-right: 100px;
     padding-left: 15px;
     padding-right: 15px;
     display:fit-content;
     align-content: center;
     justify-content: center;
-    height: 100vh;
+    height: 800px;
+    
     
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 100px rgb(0, 0, 0);
     position: relative;
 }
 
@@ -270,6 +274,23 @@ section img{
 .slide img {
     width: 100%;
     display: block;
+}
+
+.btn-sobre-carrusel {
+    position: absolute;
+    top: 750px; /* Ajusta según sea necesario */
+    right: 20px; /* Ajusta según sea necesario */
+    padding: 10px 20px;
+    background-color: #1da6b8;
+    color: rgb(206, 206, 206);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn-sobre-carrusel:hover {
+    background-color: #0A545D;
 }
 
 /* Seccion de Agenda */
@@ -403,7 +424,7 @@ section img{
     background-color: rgba(0, 23, 36, 0.993);
     padding: 60px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.623);
 }
 
 .CUADROINICIOSESION2 {
@@ -487,6 +508,8 @@ footer {
     margin-bottom: 10px;
 }
 
+/* AJUSTES DE TEXTO! */
+
 h1, h2 {
     color: #fdfdfd;
     margin-bottom: 20px;
@@ -555,9 +578,8 @@ h1 a:hover {
 
 
 @keyframes slide {
-    0% { transform: translateX(0%); }
-    10% { transform: translateX(33%); }
-    23% { transform: translateX(-33%); }
-    66% { transform: translateX(-20%); }
+    0% { transform: translateX(100%); }
+    33% { transform: translateX(0); }
+    66% { transform: translateX(-100%);}
     100% { transform: translateX(0%); }
 }

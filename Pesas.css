@@ -55,8 +55,8 @@ img {
     height: 200px; 
     overflow-y: scroll;
     padding: 10px;
-    background-color: #5d3dd3; /* Color de fondo  */
-    border: 1px solid #5d3dd3; /* Borde  */
+    background-color: #323741; /* Color de fondo  */
+    border: 1px solid #323741; /* Borde  */
 }
 
 .slider1 h3 {
@@ -81,7 +81,7 @@ nav ul {
 nav ul li {
     
     list-style-type: none;
-    background-color: #5d3dd3;
+    background-color: #323741;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 5px;
@@ -130,7 +130,7 @@ a:hover {                                           /* Estilo cuando el cursor p
     
     display: none;
     position: relative;
-    background-color: #5d3dd3;
+    background-color: #323741;
     justify-self: center;
     max-width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -143,17 +143,23 @@ a:hover {                                           /* Estilo cuando el cursor p
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    
 }
 
 .dropdown-menu li a {
+    
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: block;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    
 }
 
 
 .dropdown:hover .dropdown-menu {
-    background : #5d3dd3;
+    background-color: #323741;
     padding: 5px;
     display: block; /* Cambiado a block */
     position: absolute;
@@ -198,14 +204,15 @@ section img{
 
 .TituloInicio{
     position: absolute;
-    top: 700px;
-    left: 35%;
+    top: 780px;
+    left: 350px;
     transform: translate(-50%, -50%);
     font-size: 24px;
-    background-color: rgba(0, 0, 0, 0);  /* Fondo transparente */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 60px;
     padding: 10px;
     border-radius: 5px;
-}       
+}        
 
 .Frase {
     justify-content: center;

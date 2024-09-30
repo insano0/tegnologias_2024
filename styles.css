@@ -134,11 +134,15 @@ a:hover {                                           /* Estilo cuando el cursor p
 }
 
 .dropdown-menu li a {
+    
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: block;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    
 }
-
 
 .dropdown:hover .dropdown-menu {
     background : #323741;

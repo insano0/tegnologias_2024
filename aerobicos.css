@@ -130,7 +130,7 @@ a:hover {                                           /* Estilo cuando el cursor p
     
     display: none;
     position: relative;
-    background-color: #3dd380;
+    background-color: #323741;;
     justify-self: center;
     max-width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -146,14 +146,19 @@ a:hover {                                           /* Estilo cuando el cursor p
 }
 
 .dropdown-menu li a {
+    
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: block;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    
 }
 
 
 .dropdown:hover .dropdown-menu {
-    background : #3dd380;
+    background-color: #323741;
     padding: 5px;
     display: block; /* Cambiado a block */
     position: absolute;
@@ -198,15 +203,15 @@ section img{
 
 .TituloInicio{
     position: absolute;
-    top: 700px;
-    left: 35%;
+    top: 750px;
+    left: 200px;
     transform: translate(-50%, -50%);
     font-size: 24px;
-    background-color: rgba(0, 0, 0, 0);  /* Fondo transparente */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 60px;
     padding: 10px;
     border-radius: 5px;
-}       
-
+} 
 .Frase {
     justify-content: center;
     align-items: center;

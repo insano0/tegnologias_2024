@@ -107,6 +107,28 @@ a:hover {                                           /* Estilo cuando el cursor p
     overflow: hidden;
 }
 
+/*Slider*/
+
+.contenedor{
+
+    display: flex;
+    max-width: 80%; 
+    justify-content:space-between ; 
+    align-items: center;
+    gap: 25px;
+}
+.slider1 {
+    height: 200px; 
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: #2f15c3; /* Color de fondo  */
+    border: 1px solid #2f15c3; /* Borde  */
+}
+
+.slider1 h3 {
+    margin: 5px 0; /* Espacio entre los elementos h3 */
+}
+
 /* Menu Desplegable............................................................................................... */
 
 .dropdown {
@@ -134,61 +156,15 @@ a:hover {                                           /* Estilo cuando el cursor p
 }
 
 .dropdown-menu li a {
+    
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: block;
-}
-
-
-.dropdown:hover .dropdown-menu {
-    background : #323741;
-    padding: 5px;
-    display: block; /* Cambiado a block */
-    position: absolute;
-}
-
-.dropdown a:hover{
-                   
-    justify-self: center;
-    text-decoration: underline;
-    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
+    align-items: center;
+    justify-items: center;
+    text-align: center;
     
 }
-.arrow {
-    margin-left: 8px;
-}
-/* Menu Desplegable............................................................................................... */
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-menu {
-    
-    display: none;
-    position: relative;
-    background-color: #f9f9f9;
-    justify-self: center;
-    max-width: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 500;
-    margin-top: 10px;
-}
-
-.dropdown-menu li {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-menu li a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: block;
-}
-
 
 .dropdown:hover .dropdown-menu {
     background : #323741;
@@ -236,11 +212,12 @@ section img{
 
 .TituloInicio{
     position: absolute;
-    top: 700px;
-    left: 35%;
+    top: 750px;
+    left: 350px;
     transform: translate(-50%, -50%);
     font-size: 24px;
-    background-color: rgba(0, 0, 0, 0);  /* Fondo transparente */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 60px;
     padding: 10px;
     border-radius: 5px;
 }       

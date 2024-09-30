@@ -51,12 +51,31 @@ img {
     align-items: center;
     gap: 25px;
 }
+/* Slider*/
+.Slider {
+    display: flex;
+    max-width: 60%; 
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.sliderC {
+    background-image: url('pesas_f.webp');
+    background-size: cover;
+    background-position: center;
+    height: 70%;
+    color: white; /* Para que el texto sea visible sobre la imagen */
+}
 .slider1 {
+    
     height: 200px; 
     overflow-y: scroll;
+    
     padding: 10px;
-    background-color: #323741; /* Color de fondo  */
-    border: 1px solid #323741; /* Borde  */
+    background-color: rgba(0, 0, 0, 0.5);/* Color de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .slider1 h3 {

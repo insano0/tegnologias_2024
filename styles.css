@@ -506,6 +506,11 @@ footer {
     padding: 0 20px;
 }
 
+.footer-content .contacto-imagen {
+
+    width: 200px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
 .footer-content .left, .footer-content .right {
     width: 45%;
     text-align: center;

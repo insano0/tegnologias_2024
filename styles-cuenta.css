@@ -10,6 +10,8 @@ body {
     color: white;
     line-height: 1.6;
 }
+
+/* Header styles............................................................................................... */
 header {
     display: flex;
     flex-direction: row;             /* Organizar todos */
@@ -150,6 +152,7 @@ a:hover {                                           /* Estilo cuando el cursor p
 .arrow {
     margin-left: 8px;
 }
+
 
 /* Seccion de Perfil */
 .perfil-section {

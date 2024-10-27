@@ -162,14 +162,14 @@ a:hover {                                           /* Estilo cuando el cursor p
 /* Seccion de Perfil */
 .perfil-section {
     background: url('./Foto/ de/ perfil.png') no-repeat center center/cover;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .perfil-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #2e2e3e(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
@@ -353,4 +353,89 @@ a:hover {                                           /* Estilo cuando el cursor p
 
 .cerrar-sesion button:hover {
     background-color: #038587;
+}
+
+/* Sección de formulario de agregar clases */
+
+
+.agenda-formulario h1 {
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el texto */
+}
+
+form {
+    background-color: #2e2e3e;
+    padding: 20px;
+    border: 1px solid #575777;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #252535;
+}
+
+button {
+    background-color: #575777;
+    color: white; 
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #404069;
+}
+
+.error {
+    color: red;
+    display: none;
+    width: 100%;
+}
+
+.TablaClase2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: max-content;
+    border-collapse: collapse;
+    margin: auto;
+}
+table {
+    
+    width: max-content;
+    padding: center;
+    height: max-content;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    
+    
+}
+
+table, th, td {
+    border: 1px solid black;
+    
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }

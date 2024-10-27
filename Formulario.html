@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gimnasio - Programación de Clases</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input, select, button {
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gimnasio - Programación de Clases</h1>
+    <form id="formularioClase">
+        <label for="clase">Clase:</label>
+        <select id="clase" name="clase" required>
+            <option value="Aeróbicos">Aeróbicos</option>
+            <option value="Boxeo">Boxeo</option>
+            <option value="Pesas">Pesas</option>
+        </select>
+
+        <label for="mes">Mes:</label>
+        <select id="mes" name="mes" required>
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+        </select>
+
+        <label for="dia">Día:</label>
+        <select id="dia" name="dia" required>
+            <option value="" disabled selected>Seleccionar día</option>
+            <!-- Agrega opciones para los días del 1 al 31 -->
+            ${Array.from({ length: 31 }, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
+        </select>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <button type="submit">Añadir Clase</button>
+        <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Clase</th>
+                <th>Mes</th>
+                <th>Día</th>
+                <th>Hora</th>
+                <th class="hidden">Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tablaClases">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

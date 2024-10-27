@@ -1,14 +1,14 @@
-document.getElementById('formularioLibro').addEventListener('submit', function(e) {
+document.getElementById('formularioClase').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const titulo = document.getElementById('titulo').value;
-    const autor = document.querySelector('input[name="autor"]:checked');
-    const año = document.getElementById('año').value;
-    const editorial = document.querySelector('input[name="editorial"]:checked');
-    
+    const clase = document.getElementById('clase').value;
+    const mes = document.getElementById('mes').value;
+    const dia = document.getElementById('dia').value;
+    const hora = document.getElementById('hora').value;
+
     const errorMensaje = document.getElementById('errorMensaje');
     
-    if (!titulo || !autor || !año || !editorial) {
+    if (!clase || !mes || !dia || !hora) {
         errorMensaje.style.display = 'block';
         return;
     } else {
@@ -16,78 +16,57 @@ document.getElementById('formularioLibro').addEventListener('submit', function(e
     }
 
     const fila = document.createElement('tr');
-    fila.innerHTML = `<td>${titulo}</td><td>${autor.value}</td><td>${año}</td><td>${editorial.value}</td><td><button onclick="eliminarFila(this)">Eliminar</button></td>`;
-    document.getElementById('tablaLibros').appendChild(fila);
+    fila.innerHTML = `<td>${clase}</td><td>${mes}</td><td>${dia}</td><td>${hora}</td><td><button onclick="eliminarFila(this)">Eliminar</button></td>`;
+    document.getElementById('tablaClases').appendChild(fila);
 
     // Guardar los datos en el almacenamiento local
-    guardarLibroLocalStorage(titulo, autor.value, año, editorial.value);
+    guardarClaseLocalStorage(clase, mes, dia, hora);
 
-    // Opcional: limpiar el formulario después de añadir el libro
-    document.getElementById('formularioLibro').reset();
+    // Opcional: limpiar el formulario después de añadir la clase
+    document.getElementById('formularioClase').reset();
 });
 
-// Función para guardar el libro en el almacenamiento local
-function guardarLibroLocalStorage(titulo, autor, año, editorial) {
-    let libros;
-    if (localStorage.getItem('libros') === null) {
-        libros = [];
+// Función para guardar la clase en el almacenamiento local
+function guardarClaseLocalStorage(clase, mes, dia, hora) {
+    let clases;
+    if (localStorage.getItem('clases') === null) {
+        clases = [];
     } else {
-        libros = JSON.parse(localStorage.getItem('libros'));
+        clases = JSON.parse(localStorage.getItem('clases'));
     }
-    libros.push({ titulo, autor, año, editorial });
-    localStorage.setItem('libros', JSON.stringify(libros));
+    clases.push({ clase, mes, dia, hora });
+    localStorage.setItem('clases', JSON.stringify(clases));
 }
 
-// Función para cargar los libros del almacenamiento local
-function cargarLibrosLocalStorage() {
-    let libros;
-    if (localStorage.getItem('libros') === null) {
-        libros = [];
+// Función para cargar las clases del almacenamiento local
+function cargarClasesLocalStorage() {
+    let clases;
+    if (localStorage.getItem('clases') === null) {
+        clases = [];
     } else {
-        libros = JSON.parse(localStorage.getItem('libros'));
+        clases = JSON.parse(localStorage.getItem('clases'));
     }
-    const tablaLibros = document.getElementById('tablaLibros');
-    libros.forEach(libro => {
+    const tablaClases = document.getElementById('tablaClases');
+    clases.forEach(clase => {
         const fila = document.createElement('tr');
-        fila.innerHTML = `<td>${libro.titulo}</td><td>${libro.autor}</td><td>${libro.año}</td><td>${libro.editorial}</td><td><button onclick="eliminarFila(this)">Eliminar</button></td>`;
-        document.getElementById('tablaLibros').appendChild(fila);
+        fila.innerHTML = `<td>${clase.clase}</td><td>${clase.mes}</td><td>${clase.dia}</td><td>${clase.hora}</td><td><button onclick="eliminarFila(this)">Eliminar</button></td>`;
+        tablaClases.appendChild(fila);
     });
 }
 
-// Cargar los libros del almacenamiento local al iniciar
-cargarLibrosLocalStorage();
+// Cargar las clases del almacenamiento local al iniciar
+cargarClasesLocalStorage();
 
-// Luego, cargar los libros del XML
-fetch('libro.xml')
-    .then(response => response.text())
-    .then(data => {
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(data, 'application/xml');
-        const libros = xml.getElementsByTagName('libro');
-        const tablaLibros = document.getElementById('tablaLibros');
-        
-        Array.from(libros).forEach(libro => {
-            const fila = document.createElement('tr');
-            const titulo = libro.getElementsByTagName('titulo')[0].textContent;
-            const autor = libro.getElementsByTagName('autor')[0].textContent;
-            const año = libro.getElementsByTagName('año')[0].textContent;
-            const editorial = libro.getElementsByTagName('editorial')[0].textContent;
-            
-            fila.innerHTML = `<td>${titulo}</td><td>${autor}</td><td>${año}</td><td>${editorial}</td><td><button onclick="eliminarFila(this)">Eliminar</button></td>`;
-            document.getElementById('tablaLibros').appendChild(fila);
-        });
-    });
-    
 // Función para eliminar una fila de la tabla y del almacenamiento local
 function eliminarFila(button) {
     const fila = button.parentNode.parentNode;
-    const titulo = fila.cells[0].textContent;
-    
+    const clase = fila.cells[0].textContent;
+
     // Eliminar del almacenamiento local
-    let libros = JSON.parse(localStorage.getItem('libros'));
-    libros = libros.filter(libro => libro.titulo !== titulo);
-    localStorage.setItem('libros', JSON.stringify(libros));
-    
+    let clases = JSON.parse(localStorage.getItem('clases'));
+    clases = clases.filter(claseItem => claseItem.clase !== clase);
+    localStorage.setItem('clases', JSON.stringify(clases));
+
     // Eliminar la fila de la tabla
     fila.parentNode.removeChild(fila);
 }

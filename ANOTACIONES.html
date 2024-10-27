@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <title>Biblioteca</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input, select, button {
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Biblioteca</h1>
+    <form id="formularioLibro">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        
+        <label>Autor:</label>
+        <input type="radio" id="cervantes" name="autor" value="Miguel de Cervantes">
+        <label for="cervantes">Miguel de Cervantes</label>
+        <input type="radio" id="marquez" name="autor" value="Gabriel García Márquez">
+        <label for="marquez">Gabriel García Márquez</label>
+        
+        <label for="año">Año:</label>
+        <input type="number" id="año" name="año" required>
+        
+        <label>Editorial:</label>
+        <input type="radio" id="editorialEspañola" name="editorial" value="Editorial Española">
+        <label for="editorialEspañola">Editorial Española</label>
+        <input type="radio" id="editorialSudamericana" name="editorial" value="Editorial Sudamericana">
+        <label for="editorialSudamericana">Editorial Sudamericana</label>
+        
+        <button type="submit">Añadir Libro</button>
+        <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Año</th>
+                <th>Editorial</th>
+                <th class="hidden">Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tablaLibros">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

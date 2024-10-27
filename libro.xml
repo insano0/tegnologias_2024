@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+    <libro>
+        <titulo>El Quijote</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <año>1605</año>
+        <editorial>Editorial Española</editorial>
+    </libro>
+    <libro>
+        <titulo>Cien Años de Soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <año>1967</año>
+        <editorial>Editorial Sudamericana</editorial>
+    </libro>
+</biblioteca>

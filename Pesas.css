@@ -448,38 +448,40 @@ p {
     100% { transform: translateX(0%); }
 }
 
-/*footer*/
-#contacto {
-    padding: 20px;
-    text-align: center;
+/* Seccion de Ayuda */
+footer {
+    background-color: #2b196d;
+    padding: 20px 0;
+    color: white;
 }
 
-.contacto-contenido {
+.footer-content {
     display: flex;
     justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-content .contacto-imagen {
+
+    width: 400px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
+    width: 45%;
     align-items: center;
-    text-align: left;
-    flex-wrap: wrap; /* Hace que los elementos se ajusten si no caben en una línea */
-    gap: 20px;
-    position: relative;
+    justify-content: center;
 }
 
-.contacto-derecha, .contacto-izquierda {
-    width: 30%; /* Ajusta los textos al 30% de ancho */
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
 }
-
-.contacto-imagen {
-    width: 40%;
-    display: flex;
-    justify-content: center; 
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centra la imagen en la mitad de la sección */
-}
-
-.contacto-imagen img {
-    max-width: 70%;
-    height: auto;
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {

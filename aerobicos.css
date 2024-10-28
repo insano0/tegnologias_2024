@@ -424,6 +424,42 @@ p {
     margin-left: -1em;
 }
 
+
+/* Seccion de Ayuda */
+footer {
+    background-color: #21804c;
+    padding: 20px 0;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-content .contacto-imagen {
+
+    width: 400px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
 /* Responsive design */
 @media (max-width: 768px) {
     nav ul {
@@ -440,47 +476,12 @@ p {
     }
 }
 
-
 @keyframes slide {
     0% { transform: translateX(0%); }
     10% { transform: translateX(33%); }
     23% { transform: translateX(-33%); }
     66% { transform: translateX(-20%); }
     100% { transform: translateX(0%); }
-}
-
-/*footer*/
-#contacto {
-    padding: 20px;
-    text-align: center;
-}
-
-.contacto-contenido {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    flex-wrap: wrap; /* Hace que los elementos se ajusten si no caben en una línea */
-    gap: 20px;
-    position: relative;
-}
-
-.contacto-derecha, .contacto-izquierda {
-    width: 30%; /* Ajusta los textos al 30% de ancho */
-}
-
-.contacto-imagen {
-    width: 40%;
-    display: flex;
-    justify-content: center; 
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centra la imagen en la mitad de la sección */
-}
-
-.contacto-imagen img {
-    max-width: 70%;
-    height: auto;
 }
 
 @media (max-width: 768px) {

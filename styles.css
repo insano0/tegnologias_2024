@@ -312,6 +312,7 @@ section img{
 .month-carousel {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 20px;    
 }
 
@@ -495,7 +496,7 @@ section img{
 
 /* Seccion de Ayuda */
 footer {
-    background-color: #243b55;
+    background-color: #084f58;
     padding: 20px 0;
     color: white;
 }
@@ -508,21 +509,27 @@ footer {
 
 .footer-content .contacto-imagen {
 
-    width: 200px; /* Tamaño original */
+    width: 400px; /* Tamaño original */
     transition: transform 0.3s ease; /* Transición suave */
 }
-.footer-content .left, .footer-content .right {
+.footer-content .left {
     width: 45%;
-    text-align: center;
     align-items: center;
     justify-content: center;
 }
 
-.footer-content p{
-    margin-bottom: 10px;
-    font-size: 20px;
-    
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
 }
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
 
 /* AJUSTES DE TEXTO! */
 

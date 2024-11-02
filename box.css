@@ -199,7 +199,7 @@ main {
 
     display: block;
     align-items: center;             /* Alinear */
-    background-color: #2f11d6;
+    background-color: #34258a;
     justify-content: center;
 }
 
@@ -209,26 +209,32 @@ main {
     justify-items: center;
     align-items: center;
 
-    background-color: #2f11d6;
+    background-color: #34258a;
     height: 100vh; /* Añadido para ocupar toda la altura de la ventana */
 }
 
-section img{
+section img {
     position: center;
     width: 100%;
-    height: 860px;
+    height: 820px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-image: linear-gradient(to right, red, yellow);
+    background-clip: content-box, padding-box;
+    box-shadow: inset 0 0 0 50px #34258a;
 }
 
 .TituloInicio{
     position: absolute;
     top: 750px;
     left: 350px;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -50%);
     font-size: 24px;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 60px;
-    padding: 10px;
-    border-radius: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }       
 
 .Frase {
@@ -245,7 +251,7 @@ section img{
     align-items: center;
     padding: 15px;
 
-    background-image: radial-gradient(circle, #2f11d6 ,#543dd3);
+    background-image: radial-gradient(circle, #34258a ,#543dd3);
     height: fit-content;
     width: fit-content;
     top: 80%;        
@@ -288,6 +294,7 @@ section img{
 .month-carousel {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 20px;    
 }
 
@@ -445,39 +452,42 @@ p {
     100% { transform: translateX(0%); }
 }
 
-/*footer*/
-#contacto {
-    padding: 20px;
-    text-align: center;
+/* Seccion de Ayuda */
+footer {
+    background-color:  #150863;
+    padding: 20px 0;
+    color: white;
 }
 
-.contacto-contenido {
+.footer-content {
     display: flex;
     justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-content .contacto-imagen {
+
+    width: 400px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
+    width: 45%;
     align-items: center;
-    text-align: left;
-    flex-wrap: wrap; /* Hace que los elementos se ajusten si no caben en una línea */
-    gap: 20px;
-    position: relative;
+    justify-content: center;
 }
 
-.contacto-derecha, .contacto-izquierda {
-    width: 30%; /* Ajusta los textos al 30% de ancho */
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
 }
 
-.contacto-imagen {
-    width: 40%;
-    display: flex;
-    justify-content: center; 
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centra la imagen en la mitad de la sección */
-}
-
-.contacto-imagen img {
-    max-width: 70%;
-    height: auto;
-}
 
 @media (max-width: 768px) {
     .contacto-contenido {

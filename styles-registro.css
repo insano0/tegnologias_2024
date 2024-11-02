@@ -215,10 +215,56 @@ footer {
     padding: 0 20px;
 }
 
-.footer-content .left, .footer-content .right {
+.footer-content .contacto-imagen {
+
+    width: 400px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
     width: 45%;
+    align-items: center;
+    justify-content: center;
 }
 
-.footer-content p {
-    margin-bottom: 10px;
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* AJUSTES DE TEXTO! */
+
+h1, h2 {
+    color: #fdfdfd;
+    
+}
+
+h1 {
+    font-family: 'Inika', serif;
+    font-size: 70px;
+    font-weight: 200;
+}
+
+h2 {
+    font-family: 'Inika', serif;
+    font-size: 32px;
+    font-weight: 50;
+}
+
+p {
+    align-items: center;
+}
+
+h1 a {
+    color: #15B0C3; /* Color del enlace */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+h1 a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
 }

@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL
-$sql = "SELECT id, nombre, email FROM usuarios";
+$sql = "SELECT * FROM test";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

@@ -8,7 +8,7 @@ header('Access-Control-Allow-Headers: Content-Type');
 $servername = "sql109.infinityfree.com";
 $username = "if0_37602159";
 $password = "tegnologias";
-$dbname = "if0_37602159_XXX";
+$dbname = "if0_37602159_agendamiento";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

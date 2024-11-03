@@ -8,8 +8,12 @@ header('Access-Control-Allow-Headers: Content-Type');
 include 'db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtén los datos del POST
-    $data = $_POST['data'];
+
+    // Obtener datos del POST
+    $clase = $_POST['clase'];
+    $mes = $_POST['mes'];
+    $dia = $_POST['dia'];
+    $hora = $_POST['hora'];
 
     // Validar los datos
     if (!empty($data)) {

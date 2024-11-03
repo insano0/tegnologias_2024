@@ -15,7 +15,7 @@ document.getElementById('formularioClase').addEventListener('submit', function(e
         errorMensaje.style.display = 'none';
     }
 
-    fetch('http://sql109.infinityfreeapp.com/db_connection.php', {
+    fetch('http://sql109.infinityfreeapp.com/handle_data.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

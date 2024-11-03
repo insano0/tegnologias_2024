@@ -1,8 +1,8 @@
 <?php
-$servername = "nombre_del_servidor";
-$username = "nombre_de_usuario";
-$password = "contraseña";
-$dbname = "nombre_de_la_base_de_datos";
+$servername = "sql109.infinityfree.com";
+$username = "if0_37602159";
+$password = "tegnologias";
+$dbname = "if0_37602159_XXX";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

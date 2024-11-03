@@ -15,7 +15,7 @@ document.getElementById('formularioClase').addEventListener('submit', function(e
         errorMensaje.style.display = 'none';
     }
 
-    fetch('http://sql109.infinityfreeapp.com/handle_data.php', {
+    fetch('http://sql109.infinityfreeapp.com/db_connection.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -25,8 +25,8 @@ document.getElementById('formularioClase').addEventListener('submit', function(e
     .then(response => response.text())
     .then(data => {
         console.log('Respuesta del servidor:', data);
-        
-        // Aquí puedes actualizar la tabla con los nuevos datos si es necesario
+
+        // Aquí puedes actualizar la tabla con los nuevos datos
         const tablaClases = document.getElementById('tablaClases');
         const nuevaFila = document.createElement('tr');
         nuevaFila.innerHTML = `<td>${clase}</td><td>${mes}</td><td>${dia}</td><td>${hora}</td><td><button onclick="eliminarFila(this)">Eliminar</button></td>`;

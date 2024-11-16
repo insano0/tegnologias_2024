@@ -18,18 +18,22 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Consulta SQL
-$sql = "SELECT * FROM test";
-$result = $conn->query($sql);
+// Obtener los datos del formulario
+$clase = $_POST['clase'];
+$mes = $_POST['mes'];
+$dia = $_POST['dia'];
+$hora = $_POST['hora'];
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "hora: " . $row["hora"]. " - Mes: " . $row["mes"]. " - hora: " . $row["hora"]. "<br>";
-    }
+// Preparar la consulta SQL
+$sql = "INSERT INTO clases (clase, mes, dia, hora) VALUES ('$clase', '$mes', '$dia', '$hora')";
+
+// Ejecutar la consulta
+if ($conn->query($sql) === TRUE) {
+    echo "Clase añadida exitosamente";
 } else {
-    echo "0 resultados";
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// Cerrar conexión
+// Cerrar la conexión
 $conn->close();
 ?>

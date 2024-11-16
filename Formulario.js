@@ -1,46 +1,56 @@
-document.getElementById('formularioClase').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const clase = document.getElementById('clase').value;
-    const mes = document.getElementById('mes').value;
-    const dia = document.getElementById('dia').value;
-    const hora = document.getElementById('hora').value;
-
-    const errorMensaje = document.getElementById('errorMensaje');
+document.addEventListener('DOMContentLoaded', function () {
+    mostrarClases();
     
-    if (!clase || !mes || !dia || !hora) {
-        errorMensaje.style.display = 'block';
-        return;
-    } else {
-        errorMensaje.style.display = 'none';
+    document.getElementById('formularioClase').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const clase = document.getElementById('clase').value;
+        const mes = document.getElementById('mes').value;
+        const dia = document.getElementById('dia').value;
+        const hora = document.getElementById('hora').value;
+
+        if (clase && mes && dia && hora) {
+            const claseInfo = {
+                clase: clase,
+                mes: mes,
+                dia: dia,
+                hora: hora
+            };
+
+            guardarClase(claseInfo);
+            mostrarClases();
+        } else {
+            document.getElementById('errorMensaje').style.display = 'block';
+        }
+    });
+
+    function guardarClase(claseInfo) {
+        let clases = JSON.parse(localStorage.getItem('clases')) || [];
+        clases.push(claseInfo);
+        localStorage.setItem('clases', JSON.stringify(clases));
     }
 
-    fetch('http://sql109.infinityfreeapp.com/db_connection.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `clase=${encodeURIComponent(clase)}&mes=${encodeURIComponent(mes)}&dia=${encodeURIComponent(dia)}&hora=${encodeURIComponent(hora)}`
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log('Respuesta del servidor:', data);
-
-        // Aquí puedes actualizar la tabla con los nuevos datos
+    function mostrarClases() {
         const tablaClases = document.getElementById('tablaClases');
-        const nuevaFila = document.createElement('tr');
-        nuevaFila.innerHTML = `<td>${clase}</td><td>${mes}</td><td>${dia}</td><td>${hora}</td><td><button onclick="eliminarFila(this)">Eliminar</button></td>`;
-        tablaClases.appendChild(nuevaFila);
+        tablaClases.innerHTML = '';
+        const clases = JSON.parse(localStorage.getItem('clases')) || [];
 
-        // Limpiar el formulario
-        document.getElementById('formularioClase').reset();
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+        clases.forEach((clase, index) => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${clase.clase}</td>
+                <td>${clase.mes}</td>
+                <td>${clase.dia}</td>
+                <td>${clase.hora}</td>
+                <td><button onclick="eliminarClase(${index})">Eliminar</button></td>
+            `;
+            tablaClases.appendChild(fila);
+        });
+    }
 });
 
-function eliminarFila(button) {
-    const fila = button.parentNode.parentNode;
-    fila.parentNode.removeChild(fila);
+function eliminarClase(index) {
+    let clases = JSON.parse(localStorage.getItem('clases')) || [];
+    clases.splice(index, 1);
+    localStorage.setItem('clases', JSON.stringify(clases));
+    document.addEventListener('DOMContentLoaded', mostrarClases);
 }

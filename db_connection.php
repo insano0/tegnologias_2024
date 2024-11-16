@@ -5,12 +5,12 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
 // Credenciales de la base de datos
-$servername = "sql109.infinityfree.com";
-$username = "if0_37602159";
-$password = "tegnologias";
-$dbname = "if0_37602159_agendamiento";
+$servername = "sql212.infinityfree.com";
+$username = "if0_37641963";
+$password = "cHglxwRYwcacKo";
+$dbname = "if0_37641963_gymword";
 
-// Crear la conexión
+// Crear la conexión 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar la conexión

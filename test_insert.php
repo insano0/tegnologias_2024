@@ -1,21 +1,20 @@
 <?php
-include 'db_connection.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-$sql = "INSERT INTO persona (correo) VALUES ('prueba@example.com')";
+$servername = "sql212.infinityfree.com";
+$username = "if0_37641963";
+$password = "cHglxwRYwcacKo";
+$dbname = "if0_37641963_gymword";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Nuevo registro creado exitosamente en la tabla persona.";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+
+// Crear la conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
-
-$sql = "INSERT INTO agenda (clase, mes, dia, hora) VALUES ('Aeróbicos', 'Enero', 1, '10:00')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Nuevo registro creado exitosamente en la tabla agenda.";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
+echo "Conexión exitosa a la base de datos '$dbname'";
 ?>

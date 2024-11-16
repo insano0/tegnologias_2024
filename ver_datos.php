@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta para obtener los datos
-$sql = "SELECT * FROM programacion_clases"; // Asegúrate de que el nombre de la tabla sea correcto
+$sql = "SELECT * FROM clases"; // Asegúrate de que el nombre de la tabla sea correcto
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

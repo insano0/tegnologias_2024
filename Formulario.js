@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
             tablaClases.appendChild(fila);
         });
     }
-});
 
-function eliminarClase(index) {
-    let clases = JSON.parse(localStorage.getItem('clases')) || [];
-    clases.splice(index, 1);
-    localStorage.setItem('clases', JSON.stringify(clases));
-    document.addEventListener('DOMContentLoaded', mostrarClases);
-}
+    function eliminarClase(index) {
+        let clases = JSON.parse(localStorage.getItem('clases')) || [];
+        clases.splice(index, 1);
+        localStorage.setItem('clases', JSON.stringify(clases));
+        mostrarClases(); // Llamada directa para actualizar la tabla
+    }
+});

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device, initial-scale=1.0">
     <title>Mi Página Web con Menú</title>
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -18,6 +18,7 @@
             <nav>
                 <ul>
                     <li><a href="#Ayuda">AYUDA</a></li>
+                    <li><a href="#Agenda">AGENDA</a></li>
                     <li class="dropdown">
                         <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
@@ -26,7 +27,7 @@
                             <li><a href="pesas.html">PESAS</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Agenda">AGENDA</a></li>
+                    
                 </ul>
             </nav>
             <div class="Perfil">
@@ -40,7 +41,8 @@
     </header>
 
     <main>
-        <section id="inicio">
+        
+        <section id="inicio">   
             <img src="INICIO.jpg" alt="Logo">
             <div class="TituloInicio">
                 <h1>¿Que realizo primero?</h1>
@@ -70,13 +72,14 @@
                         <img src="Pesas.webp" alt="Imagen 3">
                     </div>
                 </div>
-                <button class="btn-sobre-carrusel">Click para ver mas</button>
+                <button class="btn-sobre-carrusel"><h1>Click para ver mas</h1></button>
             </div>
         </section>
         <section class="agenda-section">
             <h2>Agenda</h2>
 
                 <!-- Meses -->
+                 
     <div class="month-carousel">
         <button class="carousel-btn prev-btn">&#10094;</button>
         <div class="carousel-wrapper">
@@ -230,6 +233,69 @@
                 </div>
             </div>
         </footer>
+        <label for="tipo_clase">Tipo de clase:</label>
+    <select id="tipo_clase" name="tipo_clase">
+    <option value="box">Box</option>
+    <option value="aerobicos">Aeróbicos</option>
+    <option value="pesas">Pesas</option>
+    </select>
+        <form id="reservaForm">
+            <label for="usuario_id">Número de celular:</label>
+            <input type="text" id="usuario_id" name="usuario_id" required>
+            
+            <label for="clase_id">Clase:</label>
+            <select id="clase_id" name="clase_id">
+                <!-- Opciones generadas dinámicamente desde la base de datos -->
+            </select>
+        
+            <button type="submit">Reservar</button>
+        </form>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Clase</title>        
     </main>
+</body>
+<h1>Reservar Clase en el Gimnasio</h1>
+
+    <!-- Formulario para reservar una clase -->
+    <form id="reservaForm">
+        <label for="usuario_id">Número de celular:</label>
+        <input type="text" id="usuario_id" name="usuario_id" required>
+
+        <label for="tipo_clase">Tipo de clase:</label>
+        <select id="tipo_clase" name="tipo_clase">
+            <option value="box">Box</option>
+            <option value="aerobicos">Aeróbicos</option>
+            <option value="pesas">Pesas</option>
+        </select>
+
+        <label for="clase_id">Clase ID:</label>
+        <input type="text" id="clase_id" name="clase_id" required>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+    <script>
+        // Agregar un evento de escucha al formulario para manejar el envío
+        document.getElementById('reservaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío tradicional del formulario
+
+            // Recoger los datos del formulario
+            let formData = new FormData(this);
+
+            // Enviar los datos a reservar.php usando fetch
+            fetch('backend/reservar.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) // Obtener la respuesta en texto
+            .then(data => {
+                alert(data); // Mostrar la respuesta en una alerta
+            })
+            .catch(error => {
+                console.error('Error:', error); // Mostrar errores en la consola
+            });
+        });
+    </script>
 </body>
 </html>

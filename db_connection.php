@@ -1,12 +1,4 @@
-
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
-
-// Credenciales de la base de datos
 $servername = "sql212.infinityfree.com";
 $username = "if0_37641963";
 $password = "cHglxwRYwcacKo";
@@ -19,28 +11,32 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-
-// Obtener los datos del formulario y escaparlos para evitar inyecciones SQL
+// Obtener los datos del formulario
 $clase = $conn->real_escape_string($_POST['clase']);
 $mes = $conn->real_escape_string($_POST['mes']);
 $dia = $conn->real_escape_string($_POST['dia']);
 $hora = $conn->real_escape_string($_POST['hora']);
 
-// Verificar si se reciben los datos del formulario
-if(empty($clase) || empty($mes) || empty($dia) || empty($hora)) {
-    die("Error: No se recibieron todos los datos del formulario.");
+// Consulta para insertar los datos
+$sql_insert = "INSERT INTO clases (clase, mes, dia, hora) VALUES ('$clase', '$mes', $dia, '$hora')";
+
+if ($conn->query($sql_insert) === TRUE) {
+    echo "Nuevo registro creado exitosamente<br>";
 } else {
-    echo "Datos recibidos: Clase: $clase, Mes: $mes, Día: $dia, Hora: $hora<br>";
+    echo "Error: " . $sql_insert . "<br>" . $conn->error;
 }
 
-// Preparar la consulta SQL
-$sql = "INSERT INTO clases (clase, mes, dia, hora) VALUES ('$clase', '$mes', '$dia', '$hora')";
+// Consulta para obtener los datos
+$sql_select = "SELECT * FROM clases";
+$result = $conn->query($sql_select);
 
-// Ejecutar la consulta
-if ($conn->query($sql) === TRUE) {
-    echo "Clase añadida exitosamente";
+if ($result->num_rows > 0) {
+    // Imprimir los datos de cada fila
+    while($row = $result->fetch_assoc()) {
+        echo "Clase: " . $row["clase"] . " - Mes: " . $row["mes"] . " - Día: " . $row["dia"] . " - Hora: " . $row["hora"] . "<br>";
+    }
 } else {
-    echo "Error al añadir la clase: " . $conn->error;
+    echo "No se encontraron registros.";
 }
 
 // Cerrar la conexión

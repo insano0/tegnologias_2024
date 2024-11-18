@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('formularioClase').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevenir el envío del formulario
-        const clase = document.getElementById('clase').value;
-        const mes = document.getElementById('mes').value;
-        const dia = document.getElementById('dia').value;
-        const hora = document.getElementById('hora').value;
+
+        const clase = document.getElementById('clase').value.trim();
+        const mes = document.getElementById('mes').value.trim();
+        const dia = document.getElementById('dia').value.trim();
+        const hora = document.getElementById('hora').value.trim();
+        const errorMensaje = document.getElementById('errorMensaje');
 
         if (clase && mes && dia && hora) {
             const claseInfo = {
@@ -16,13 +18,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 hora: hora
             };
 
+            const jsonData = JSON.stringify(claseInfo);
+            console.log(jsonData);
+
             guardarClase(claseInfo);
+            enviarDatos(jsonData);
             mostrarClases();
             // Limpiar el formulario
             document.getElementById('formularioClase').reset();
-            document.getElementById('errorMensaje').style.display = 'none';
+            errorMensaje.style.display = 'none';
         } else {
-            document.getElementById('errorMensaje').style.display = 'block';
+            errorMensaje.style.display = 'block';
         }
     });
 });
@@ -56,4 +62,45 @@ function eliminarClase(index) {
     clases.splice(index, 1);
     localStorage.setItem('clases', JSON.stringify(clases));
     mostrarClases(); // Llamada directa para actualizar la tabla
+}
+/*
+function enviarDatos(data) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://wordgym.rf.gd/Formulario.php', true); // Reemplaza 'URL_DEL_SERVIDOR' con la URL del servidor que recibe los datos
+    xhr.setRequestHeader('Content-Type', 'application/json;');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText); // Corregido a xhr.responseText
+                // Aquí puedes manejar la respuesta del servidor si es necesario
+                console.log(response);
+            } else {
+                console.error('Error en el envío de datos', this.statusText);
+            }
+        }
+    };
+    xhr.send(data);
+}
+*/
+
+function enviarDatos(jsonData) {
+    fetch('http://wordgym.rf.gd/Formulario.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: jsonData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }

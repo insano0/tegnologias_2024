@@ -21,11 +21,17 @@ body {
 /* Header styles............................................................................................... */
 header {
     display: flex;
+    position: fixed;
+    top: 0;          
+    left: 0;          
+    right: 0; 
     justify-content: space-between;
     align-items: center;
-    background-color: #202030;
+    background-color: #18087e;
     padding: 10px 20px;
     color: white;
+    width: 100vw;
+    z-index: 9999;
 }
 
 
@@ -105,24 +111,15 @@ header .Perfil img {
 .slider1 h3 {
     margin: 5px 0; /* Espacio entre los elementos h3 */
 }
+.Perfil{
+    
+    max-width: 4.5rem;
+    max-height: 4.5rem;
+    border-radius: 100%;
+    overflow: hidden;
+}
 /* Menu Desplegable............................................................................................... */
 
-.dropdown {
-    position: relative;
-    display: flex;
-}
-
-.dropdown-menu {
-    
-    display: none;
-    position: relative;
-    background-color: #f9f9f9;
-    justify-self: center;
-    max-width: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 500;
-    margin-top: 10px;
-}
 header nav ul li .dropdown-menu {
     display: none;
     position: absolute;
@@ -132,45 +129,9 @@ header nav ul li .dropdown-menu {
     border-radius: 5px;
     top: 100%;
 }
+
 header nav ul li:hover .dropdown-menu {
     display: block;
-}
-
-.dropdown-menu li {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-menu li a {
-    
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: block;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    
-}
-
-
-.dropdown:hover .dropdown-menu {
-    background : #323741;
-    padding: 5px;
-    display: block; /* Cambiado a block */
-    position: absolute;
-}
-
-.dropdown a:hover{
-                   
-    justify-self: center;
-    text-decoration: underline;
-    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
-    
-}
-.arrow {
-    margin-left: 8px;
 }
 
 
@@ -217,6 +178,9 @@ section img{
     
     
   } 
+  .TituloInicio h1 {
+    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
+  } 
 .imagen-inicio {
     position: center; /* Hace que los elementos posicionados dentro se ajusten a este contenedor */
     width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
@@ -225,9 +189,7 @@ section img{
     width: 100%; /* La imagen ocupa todo el ancho del contenedor */
     height: 100%; /* Mantiene la proporción de la imagen */
   }
-.TituloInicio h1 {
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
-  }  
+
 
 .Frase {
     justify-content: center;
@@ -256,7 +218,7 @@ section img{
     font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
   }  
 .FraseMotivacional h2 {
-    font-size: clamp(14px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
+    font-size: clamp(14px, 5vw, 24px); /* Ajuste fluido de tamaño de fuente */
   }  
 .arrow-down {
     align-items: center;
@@ -297,7 +259,7 @@ section img{
 
 .carousel-wrapper {
     overflow: hidden;
-    width: 80%;
+    width: 100vw;
     display: flex;
 }
 
@@ -428,7 +390,7 @@ p {
 
 /* Seccion de Ayuda */
 footer {
-    background-color: #202030;
+    background-color: #101067;
     color: white;
     padding: 20px;
     text-align: center;
@@ -440,7 +402,7 @@ footer .footer-content {
     gap: 20px;
 }
 
-footer .footer-content .left,
+
 footer .footer-content .right {
     text-align: left;
 }
@@ -468,9 +430,9 @@ footer .footer-content .right {
 }
 
 form {
-    background-color: #2e2e3e;
+    background-color: #1e0aa4;
     padding: 20px;
-    border: 1px solid #575777;
+    border: 1px solid rgb(23, 8, 120);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -484,6 +446,7 @@ form {
 
 label {
     margin-right: 10px;
+    color: white;
 }
 
 input, select, button {
@@ -518,7 +481,7 @@ button:hover {
     width: max-content;
     border-collapse: collapse;
     margin: auto;
-    color: #000;
+    color: white;
 }
 table {
     
@@ -528,6 +491,7 @@ table {
     border-collapse: collapse;
     text-align: center;
     margin: auto;
+   
     
     
 }
@@ -540,6 +504,7 @@ table, th, td {
 th, td {
     padding: 10px;
     text-align: center;
+    
 }
 
 .hidden {

@@ -216,23 +216,7 @@
                 </div>
             </div>
                 
-        </section>
-        <footer>
-            <div class="footer-content">
-                <div class="left">
-                    <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
-                    Puedes acercarte a nuestros canales de comunicación.</p>
-                </div>
-                <div class="contacto-imagen">
-                    <img src="logo.png" alt="Imagen de contacto">
-                </div>
-                <div class="right">
-                    <p>Nos encuentras en nuestras redes sociales como:</p>
-                    <p>@CuentaFalsa_Trabajo</p>
-                    <p>Correo: XxDestroyer777Xx@gmail.com</p>
-                </div>
-            </div>
-        </footer>
+        </section>       
         <label for="tipo_clase">Tipo de clase:</label>
     <select id="tipo_clase" name="tipo_clase">
     <option value="box">Box</option>
@@ -255,25 +239,45 @@
     <title>Reserva de Clase</title>        
     </main>
 </body>
-<h1>Reservar Clase en el Gimnasio</h1>
 
-    <!-- Formulario para reservar una clase -->
-    <form id="reservaForm">
-        <label for="usuario_id">Número de celular:</label>
-        <input type="text" id="usuario_id" name="usuario_id" required>
+    <!-- Sección de formulario de agregar clases -->
 
-        <label for="tipo_clase">Tipo de clase:</label>
-        <select id="tipo_clase" name="tipo_clase">
-            <option value="box">Box</option>
-            <option value="aerobicos">Aeróbicos</option>
-            <option value="pesas">Pesas</option>
-        </select>
+    <section class="agenda-formulario">
+        <h1>Reservar Clase en el Gimnasio</h1>
+           <form id="formularioClase">
+               <label for="clase">Clase:</label>
+                    <select id="clase" name="clase" required>
+                        <option value="Aeróbicos">Aeróbicos</option>
+                        <option value="Boxeo">Boxeo</option>
+                         <option value="Pesas">Pesas</option>
+                    </select>
 
-        <label for="clase_id">Clase ID:</label>
-        <input type="text" id="clase_id" name="clase_id" required>
+                <label for="mes">Mes:</label>
+                    <select id="mes" name="mes" required>
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
 
-        <button type="submit">Reservar</button>
+        <label for="dia">Día:</label>
+        <input type="number" id="dia" name="dia" min="1" max="31" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <button type="submit">Añadir Clase</button>
+        <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
     </form>
+    </section>
 
     <script>
         // Agregar un evento de escucha al formulario para manejar el envío
@@ -298,4 +302,22 @@
         });
     </script>
 </body>
+<footer>
+    <section id="contacto">            
+        <div class="contacto-contenido">
+            <div class="contacto-derecha">
+                <p>Estamos aquí para ayudarte.</p>
+                <p> No dudes en ponerte en contacto con nosotros.</p>
+                <p>Email: info@ejemplo.com</p>
+            </div>
+            <div class="contacto-imagen">
+                <img src="logo.png" alt="Imagen de contacto">
+            </div>
+            <div class="contacto-izquierda">
+                <p>Teléfono: +34 123 456 789</p>
+                <p>Dirección: Calle Ejemplo, 123, 28001 Madrid, España</p>
+            </div>
+        </div>
+    </section>
+</footer> 
 </html>

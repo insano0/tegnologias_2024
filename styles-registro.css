@@ -68,13 +68,16 @@ header .Perfil img {
 .registro-section {
     text-align: center;
     background: linear-gradient(180deg, #202030, #404060);
-    padding: 20px;
+    padding: 0px;
     color: white;
+    height: 100vw;
+    max-height: 800px;
 }
 
-.registro-section .background-image img {
-    max-width: 100%;
+.registro-section .background-image img {   
+    width: 100vw;
     height: auto;
+    max-height: 500px;
 }
 
 .registro-section h2 {
@@ -93,7 +96,7 @@ header .Perfil img {
 
 .registro-section .btn-confirmar {
     padding: 10px 20px;
-    background-color: #007b5e;
+    background-color: #242434;
     color: white;
     border: none;
     border-radius: 5px;
@@ -101,26 +104,42 @@ header .Perfil img {
 }
 
 .registro-section .btn-confirmar:hover {
-    background-color: #005b46;
+    background-color: #242434;
 }
 
-/* Footer */
+/* Seccion de Ayuda */
 footer {
-    background-color: #202030;
+    background-color: #242434;
     color: white;
     padding: 20px;
     text-align: center;
+    height: 100vw;
+    max-height: 279px;
 }
 
 footer .footer-content {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    justify-content: space-between;
     gap: 20px;
 }
 
-footer .footer-content .left,
+
 footer .footer-content .right {
     text-align: left;
+}
+
+.contacto-imagen {
+    display: none;
+    width: 30%; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+    
+}
+
+
+.footer-content p{
+    margin-bottom: 10px;
+    font-size: 20px;
+    
 }
 
 /* Responsive Styles */

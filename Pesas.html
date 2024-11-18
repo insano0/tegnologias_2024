@@ -18,6 +18,7 @@
             <nav>
                 <ul>
                     <li><a href="#Ayuda">AYUDA</a></li>
+                    <li><a href="#Agenda">AGENDA</a></li>
                     <li class="dropdown">
                         <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
@@ -26,7 +27,7 @@
                             <li><a href="pesas.html">PESAS</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Agenda">AGENDA</a></li>
+                    
                 </ul>
             </nav>
              <div class="Perfil">
@@ -204,9 +205,66 @@
                
             </div>
         </section>
+         <!-- Sección de formulario de agregar clases -->
+
+      <section class="agenda-formulario">
+        <h1>Gimnasio - Programación de Clases</h1>
+           <form id="formularioClase">
+               <label for="clase">Clase:</label>
+                    <select id="clase" name="clase" required>
+                        <option value="Aeróbicos">Aeróbicos</option>
+                        <option value="Boxeo">Boxeo</option>
+                         <option value="Pesas">Pesas</option>
+                    </select>
+
+                <label for="mes">Mes:</label>
+                    <select id="mes" name="mes" required>
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
+
+        <label for="dia">Día:</label>
+        <input type="number" id="dia" name="dia" min="1" max="31" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <button type="submit">Añadir Clase</button>
+        <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
+    </form>
+    </section>
+    
+    <!--HorariosActuales-->
+
+    <section class="TablaClase2">
+        <table>
+            <thead>
+                <tr>
+                    <th>Clase</th>
+                    <th>Mes</th>
+                    <th>Día</th>
+                    <th>Hora</th>
+                    <th class="hidden">Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaClases">
+            </tbody>
+        </table>  
+    <script src="Formulario.js"></script>
+    </section>
         
                 
-    
+    <footer>
         <section id="contacto">
             <div class="contacto-contenido">
                 <div class="contacto-derecha">
@@ -222,7 +280,7 @@
                 </div>
             </div>
         </section>
-        
+    </footer>  
     </main>
 </body>
 </html>

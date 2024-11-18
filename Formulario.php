@@ -9,9 +9,11 @@ $mes = $conn->real_escape_string($data['mes']);
 $dia = $conn->real_escape_string($data['dia']);
 $hora = $conn->real_escape_string($data['hora']);
 
+
 // Leer los datos JSON de la solicitud POST
 $data = json_decode(file_get_contents('php://input'), true);
 
+$sql = "select * from clases";
 // Consulta para insertar los datos
 $sql_insert = "INSERT INTO clases (clase, mes, dia, hora) VALUES ('$clase', '$mes', $dia, '$hora')";
 

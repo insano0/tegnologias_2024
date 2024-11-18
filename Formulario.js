@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             const jsonData = JSON.stringify(claseInfo);
-            console.log(jsonData);
+            console.log('Datos del formulario en formato JSON:', jsonData);
 
-            guardarClase(claseInfo);
             enviarDatos(jsonData);
+            guardarClase(claseInfo);
             mostrarClases();
             // Limpiar el formulario
             document.getElementById('formularioClase').reset();
@@ -64,25 +64,6 @@ function eliminarClase(index) {
     mostrarClases(); // Llamada directa para actualizar la tabla
 }
 /*
-function enviarDatos(data) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://wordgym.rf.gd/Formulario.php', true); // Reemplaza 'URL_DEL_SERVIDOR' con la URL del servidor que recibe los datos
-    xhr.setRequestHeader('Content-Type', 'application/json;');
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                const response = JSON.parse(xhr.responseText); // Corregido a xhr.responseText
-                // Aquí puedes manejar la respuesta del servidor si es necesario
-                console.log(response);
-            } else {
-                console.error('Error en el envío de datos', this.statusText);
-            }
-        }
-    };
-    xhr.send(data);
-}
-*/
-
 function enviarDatos(jsonData) {
     fetch('http://wordgym.rf.gd/Formulario.php', {
         method: 'POST',
@@ -104,3 +85,23 @@ function enviarDatos(jsonData) {
         console.error('Error:', error);
     });
 }
+
+*/
+function enviarDatos(jsonDatadata) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'wordgym.rf.gd/Formulario.php', true); // Reemplaza 'URL_DEL_SERVIDOR' con la URL del servidor que recibe los datos
+    xhr.setRequestHeader('Content-Type', 'application/json;');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText); // Corregido a xhr.responseText
+                // Aquí puedes manejar la respuesta del servidor si es necesario
+                console.log(response);
+            } else {
+                console.error('Error en el envío de datos', this.statusText);
+            }
+        }
+    };
+    xhr.send(data);
+}
+

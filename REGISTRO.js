@@ -2,42 +2,40 @@ window.onload = function () {
     document.getElementById('miFormulario').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevenir el envío predeterminado del formulario
 
-        const usuario = document.getElementById('usuario').value.trim();
-        const correo = document.getElementById('correo').value.trim();
-        const contrasena = document.getElementById('contrasena').value.trim();
+        const formData = new FormData(this); // Crear un objeto FormData desde el formulario
 
-        const userData = {
-            usuario: usuario,
-            correo: correo,
-            contrasena: contrasena
-        };
+        // Registrar los datos del formulario en la consola
+        for (const [key, value] of formData.entries()) {
+            console.log(`${key}: ${value}`);
+        }
 
-        const jsonData = JSON.stringify(userData);
-        console.log('Datos del formulario en formato JSON:', jsonData);
+        const xhr = new XMLHttpRequest();  // Crear un XMLHttpRequest
+        xhr.open('POST', 'registro.php', true);  // Abrir una solicitud POST a tu endpoint PHP
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'registro.php', true); // Reemplaza 'registro.php' con la URL del servidor que recibe los datos
-        xhr.setRequestHeader('Content-Type', 'application/json');
+        // Cuando la solicitud se completa
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) { // Solicitud completada
-                if (xhr.status === 200) { // Si la solicitud fue exitosa
+            if (xhr.readyState === 4) {  // Solicitud completada
+                if (xhr.status === 200) {  // Si la solicitud fue exitosa
                     try {
-                        const response = JSON.parse(xhr.responseText);
-                        console.log(response); // Manejar la respuesta del servidor
+                        //console.log(xhr.responseText);  // Imprimir la respuesta en la consola
+                        const response = JSON.parse(xhr.responseText);  // Parsear la respuesta JSON
+                        console.log(response);  // Imprimir la respuesta en la consola
 
                         // Mostrar un mensaje de éxito
                         alert(response.mensaje || "Datos guardados");
 
-                        // Limpiar el formulario
+                        // Limpiar el formulario (Aquí es donde se limpia el formulario)
                         document.getElementById('miFormulario').reset();
-                    } catch (e) {
-                        console.error('Error al parsear la respuesta JSON:', e);
+                    } catch (error) {
+                        console.error('Error al parsear la respuesta JSON:', error);
                     }
                 } else {
-                    console.error('Error en el envío de datos:', xhr.statusText);
+                    console.error('Error en la solicitud:', xhr.statusText);  // Imprimir un error si algo sale mal
                 }
             }
         };
-        xhr.send(jsonData); // Enviar los datos en formato JSON
+
+        // Enviar los datos del formulario al servidor
+        xhr.send(formData);  // Enviar el objeto FormData
     });
 }

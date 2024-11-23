@@ -8,7 +8,7 @@ window.onload = function () {
         // FormData automatically handles file inputs, so no need for custom JSON handling
 
         const xhr = new XMLHttpRequest();  // Create an XMLHttpRequest
-        xhr.open('POST', 'OBTENCIONDATOS.php', true);  // Open a POST request to your PHP endpoint
+        xhr.open('POST', 'api/post/registro.php', true);  // Open a POST request to your PHP endpoint
 
         // When the request completes
         xhr.onreadystatechange = function () {

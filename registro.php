@@ -1,48 +1,45 @@
 <?php
-// process.php
-include_once "../conexion.php";
+include 'db_connection.php'; // Incluir el archivo de conexión
+
+// Establecer el tipo de contenido de la respuesta a JSON
 header('Content-Type: application/json');
+
+// Manejar errores de reporte
 error_reporting(0);
 
-// Verificar si los datos fueron enviados
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// Leer los datos enviados mediante el formulario
+$correo = $conn->real_escape_string($_POST['correo']);
+$usuario = $conn->real_escape_string($_POST['usuario']);
+$contrasena = $conn->real_escape_string($_POST['contrasena']);
 
-    // Verificar si se cargó un archivo
-    if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0) {
-        $targetDir = "../../uploads/"; // Directorio donde deseas guardar el archivo
-        $fileName = basename($_FILES['imagen']['name']);
-        $targetFilePath = $targetDir . $fileName;
-        $targetFilePathBD = "uploads/" . $fileName;
-        $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+// Consulta para insertar los datos
+$sql_insert = "INSERT INTO registro (correo, usuario, contrasena) VALUES ('$correo', '$usuario', PASSWORD('$contrasena'))";
 
-        // Mover el archivo cargado a la ubicación deseada
-        if (move_uploaded_file($_FILES['imagen']['tmp_name'], $targetFilePath)) {
-            $uploadPath = $targetFilePath; // Ruta para almacenar en la base de datos
-        } else {
-            $response = ["mensaje" => "Error al subir la imagen:" . $_FILES['imagen']['name']];
-            echo json_encode($response);
-            exit();
-        }
-    } else {
-        $response = ["mensaje" => "No se subió ninguna imagen o hubo un error al subirla."];
-        echo json_encode($response);
-        exit();
-    }
+$response = [];
 
-    // Insertar los datos en la base de datos
-    $sql = "INSERT INTO `personas` (`id`, `correo`, `nombre`, `contrasena`, `tipo`, `imagen`)
-            VALUES (NULL, '".$_POST["email"]."', '".$_POST["username"]."', PASSWORD('".$_POST["password"]."'), 'usuario', '".$targetFilePathBD."');";
-
-    if ($conn->query($sql) === TRUE) {
-        $response = ["mensaje" => "Registro exitoso"];
-    } else {
-        $response = ["mensaje" => "Error en el registro: " . $conn->error];
-    }
-
-    echo json_encode($response);
-    $conn->close();
+if ($conn->query($sql_insert) === TRUE) {
+    $response["mensaje"] = "Nuevo registro creado exitosamente";
 } else {
-    $response = ["mensaje" => "Solicitud inválida"];
-    echo json_encode($response);
+    $response["mensaje"] = "Error en el registro";
 }
+
+// Consulta para obtener los datos
+$sql_select = "SELECT * FROM registro";
+$result = $conn->query($sql_select);
+
+if ($result->num_rows > 0) {
+    $registros = [];
+    while($row = $result->fetch_assoc()) {
+        $registros[] = $row;
+    }
+    $response["registros"] = $registros;
+} else {
+    $response["registros"] = [];
+}
+
+// Cerrar la conexión
+$conn->close();
+
+// Devolver la respuesta en formato JSON
+echo json_encode($response);
 ?>

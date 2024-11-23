@@ -1,28 +1,37 @@
 window.onload = function () {
     document.getElementById('miFormulario').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Prevenir el envío predeterminado del formulario
 
-        const formData = new FormData(this); // Create a FormData object from the form
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
 
-        // You don't need to serialize form data manually; FormData does that for you
-        // FormData automatically handles file inputs, so no need for custom JSON handling
+        const userData = {
+            username: username,
+            email: email,
+            password: password
+        };
 
-        const xhr = new XMLHttpRequest();  // Create an XMLHttpRequest
-        xhr.open('POST', 'api/post/registro.php', true);  // Open a POST request to your PHP endpoint
+        const jsonData = JSON.stringify(userData);
+        console.log('Datos del formulario en formato JSON:', jsonData);
 
-        // When the request completes
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'registro.php', true); // Reemplaza 'db_connection.php' con la URL del servidor que recibe los datos
+        xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {  // Request completed
-                if (xhr.status === 200) {  // If the request was successful
-                    const response = JSON.parse(xhr.responseText);  // Parse the JSON response
-                    console.log(response);  // Log the response to the console
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        console.log(response); // Manejar la respuesta del servidor
+                    } catch (e) {
+                        console.error('Error al parsear la respuesta JSON:', e);
+                    }
                 } else {
-                    console.error('Error in the request:', xhr.statusText);  // Log an error if something goes wrong
+                    console.error('Error en el envío de datos:', xhr.statusText);
                 }
             }
         };
-
-        // Send the form data with the file to the server
-        xhr.send(formData);  // Send the FormData object, which includes the file
+        xhr.send(jsonData); // Enviar los datos en formato JSON
     });
 }

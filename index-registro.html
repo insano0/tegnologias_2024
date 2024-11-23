@@ -41,16 +41,19 @@
 
     <main>
 <!-- Sección de Registro -->
-        <section class="registro-section">
-            <div class="background-image">
-                <a href="#background-image"> <img src="./background-image.png"> </a>
-                <h2>REGISTRO</h2>
-                <input type="text" id="username" placeholder="Ingresa tu Usuario" class="input-registro-usuario">
-                <input type="email" id="email" placeholder="Ingresa tu Correo" class="input-registro-correo">
-                <input  type="password" id="password" placeholder="Ingresa tu Contraseña" class="input-registro-contraseña">
-                <button href="/pagina_bienvenida" type="submit" class="btn-confirmar">Confirmar</button>
-            </div>
-        </section>
+<section class="registro-section">
+    <div class="background-image">
+        <a href="#background-image"> <img src="./background-image.png"> </a>
+        <h2>REGISTRO</h2>
+        <form id="miFormulario"> <!-- Añadimos un elemento form con id -->
+            <input type="text" id="username" placeholder="Ingresa tu Usuario" class="input-registro-usuario">
+            <input type="email" id="email" placeholder="Ingresa tu Correo" class="input-registro-correo">
+            <input type="password" id="password" placeholder="Ingresa tu Contraseña" class="input-registro-contraseña">
+            <button type="submit" class="btn-confirmar">Confirmar</button>
+        </form>
+    </div>
+</section>
+
 
  <!-- Sección de Ayuda -->
         <footer>
@@ -70,30 +73,6 @@
             </div>
         </footer>
     </main>
-    
-    <script>//redireccion desde el boton de redirigir
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar el envío del formulario por defecto
-
-            const formData = new FormData(this);
-
-            fetch('/api/users/register', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = '/pagina_bienvenida'; // Redirigir a la página de bienvenida
-                } else {
-                    return response.json().then(data => {
-                        alert('Error: ' + data.error);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
+    <script src="REGISTRO.js"></script>
 </body>
 </html>

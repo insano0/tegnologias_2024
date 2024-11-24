@@ -8,7 +8,7 @@ body {
     
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(180deg, #3E61C0, #08173E);
+    background-color: #1e1e2c;
     
 }
 
@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #202030;
+    background-image: linear-gradient(to bottom, #0A545D, #15B0C3);
     padding: 10px 20px;
     color: white;
 }
@@ -263,6 +263,7 @@ header nav ul li:hover .dropdown-menu {
 /* Seccion de Pagos */
 .payment-section {
     margin-top: 20px;
+    
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -420,6 +421,43 @@ th, td {
 .hidden {
     display: none;
 }
+
+/* Seccion de Ayuda */
+footer {
+    background-color: #04656b;
+    padding: 20px 0;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-content .contacto-imagen {
+
+    width: 400px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     header .contenedor {
@@ -435,6 +473,7 @@ th, td {
     footer .footer-content {
         flex-direction: column;
         gap: 10px;
+        
     }
 
     .registro-section .input-registro {

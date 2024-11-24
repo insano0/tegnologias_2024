@@ -9,7 +9,7 @@ if ($conn->connect_error) {
     exit();
 }
 
-// Consulta para obtener la información de la tabla clases
+// Consulta para obtener la información de la tabla `clases`
 $sql = "SELECT clase, dia, mes, hora FROM clases";
 $result = $conn->query($sql);
 

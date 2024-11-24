@@ -1,13 +1,11 @@
-window.onload = function () {
+window.obtenerDatos = function() {
     let datos = document.getElementById("datos");
-    ajax();
-
-    function ajax() {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            try {
                 var response = JSON.parse(xhttp.responseText);
-                console.log(response);
+                console.log('Datos obtenidos del servidor:', response);
 
                 // Variables para almacenar la información de la tabla `clases`
                 let clases = [];
@@ -50,9 +48,13 @@ window.onload = function () {
                 } else {
                     console.log("No se encontraron registros en la tabla `clases`");
                 }
+            } catch (e) {
+                console.error("Error al parsear la respuesta JSON:", e);
+                console.error("Respuesta del servidor:", xhttp.responseText);
             }
         }
-        xhttp.open("GET", "BOTON.php", true);  // Reemplaza 'BOTON.php' con la ruta correcta a tu archivo PHP
-        xhttp.send();
+        
     }
-}
+    xhttp.open("GET", "BOTON.php", true);  // Reemplaza 'BOTON.php' con la ruta correcta a tu archivo PHP
+    xhttp.send();
+};

@@ -111,27 +111,28 @@ main {
 section img{
     position: center;
     width: 100%;
-    height: 50%;
+    height: auto;
+    max-height: 900px;
 }
 
 .TituloInicio {
     position: absolute; /* Posiciona el texto encima de la imagen */
-    bottom: 25%; /* Centra el texto verticalmente */
-    left: 50%; /* Centra el texto horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
+    bottom: 10%; /* Centra el texto verticalmente */
+    left: 5%; /* Centra el texto horizontalmente */   
     color: white; /* Cambia el color del texto para que sea visible sobre la imagen */
-    text-align: center; /* Centra el texto dentro del contenedor */
+    text-align: left; 
     font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mayor legibilidad (opcional) */
-    padding: 10px; /* Espacio interno alrededor del texto */
-    border-radius: 5px; /* Bordes redondeados (opcional) */
-    width: 100vw;
-  }     
-  .TituloInicio h1 {
-    font-size: clamp(24px, 5vw, 32px); /* Ajuste fluido de tamaño de fuente */
+    background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente para mayor legibilidad (opcional) */
+    padding: 0%; /* Espacio interno alrededor del texto */
+    border-radius: 5%; /* Bordes redondeados (opcional) */   
+    margin-bottom: 5%;
+     
+  }    
+.TituloInicio h1 {
+    font-size: clamp(8px, 5vw, 32px); /* Ajuste fluido de tamaño de fuente */
   } 
-  .TituloInicio h2 {
-    font-size: clamp(12px, 5vw, 24px); /* Ajuste fluido de tamaño de fuente */
+.TituloInicio h2 {
+    font-size: clamp(4px, 5vw, 18px); /* Ajuste fluido de tamaño de fuente */
   } 
 
 
@@ -196,12 +197,10 @@ section img{
 .carousel {
     margin-left: 15vw;
     margin-right: 15vw;
-    padding-left: 15vw;
-    padding-right: 15vw;
     display:fit-content;
     align-content: center;
     justify-content: center;
-    height: 50vw;
+    height: fit-content;
     width: auto;
     
     
@@ -395,6 +394,7 @@ section img{
     
     
     position: absolute;
+    margin-left: 25%;
     top: 50%;
     
     transform: translateY(-50%);
@@ -403,7 +403,7 @@ section img{
     border-radius: 10px;
     box-shadow: 0 0 70px rgba(0, 0, 0, 0.623);
     height: auto;
-    width: 100vw;
+    width: 40vw;
 }
 
 .CUADROINICIOSESION2 {
@@ -674,6 +674,38 @@ h1 a:hover {
         h2   {
     font-size: 20px; /* Reduce el tamaño de h2 en pantallas pequeñas */
              }
+        .CUADROINICIOSESION {
+    
+    
+            position: absolute;
+            top: 50%;
+            margin-left: 0%;
+            transform: translateY(-50%);
+            background-color:  rgba(0, 23, 36, 0.993);
+            padding: 90px;
+            border-radius: 10px;
+            box-shadow: 0 0 70px rgba(0, 0, 0, 0.623);
+            height: auto;
+            width: 100vw;
+        }
+        section img{
+            position: center;
+            width: 100%;
+            height: auto;
+        }
+        .TituloInicio {
+            position: absolute; /* Posiciona el texto encima de la imagen */
+            left: 0%; /* Centra el texto horizontalmente */   
+            color: white; /* Cambia el color del texto para que sea visible sobre la imagen */
+            text-align: left; 
+            font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
+            background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente para mayor legibilidad (opcional) */
+            padding: 5%; /* Espacio interno alrededor del texto */
+            border-radius: 5px; /* Bordes redondeados (opcional) */  
+            
+            margin-bottom: 20%;     
+          } 
+          
     
     
     }

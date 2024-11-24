@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Web con Menú</title>
     <link rel="stylesheet" href="styles-cuenta.css">
-    <script src="BOTON.js"></script>
+    <script>
+     function toggleDropdown(event) {
+     event.preventDefault(); // Previene el comportamiento por defecto del enlace
+     const dropdown = event.currentTarget.parentElement;
+     dropdown.classList.toggle('active');
+     }
+    </script>
+
 </head>
 <body>
     <header>
@@ -107,10 +114,7 @@
                 <div class="class-box"></div>
 
                 <div class="hour">10:00</div>
-                <div class="class-box">
-                    <button id="miBoton" onclick="obtenerDatosFiltrados()">Mostrar Horarios</button>  
-                    <div id="datos"></div>               
-                </div>
+                <div class="class-box"></div>
                 <div class="class-box"></div>
                 <div class="class-box"></div>
                 <div class="class-box"></div>
@@ -188,7 +192,7 @@
 
         <section class="agenda-formulario">
             <h1>Gimnasio - Programación de Clases</h1>
-                <form id="formularioClase">
+               <form id="formularioClase">
                    <label for="clase">Clase:</label>
                         <select id="clase" name="clase" required>
                             <option value="Aeróbicos">Aeróbicos</option>
@@ -221,7 +225,6 @@
             <button type="submit">Añadir Clase</button>
             <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
         </form>
-        <script src="Formulario2.js"></script>
         </section>
         
         <!--HorariosActuales-->
@@ -240,13 +243,14 @@
                 <tbody id="tablaClases">
                 </tbody>
             </table>  
+        <script src="Formulario.js"></script>
         </section>
 
         <!-- Sección de datos de pago -->
         <section class="payment-section">
             <h2>Datos de Pago</h2>
         
-            <div class="payment-grid">
+            
                 <!-- Próximos Pagos -->
                 <div class="payment-column">
                     <h3>Próximos Pagos</h3>

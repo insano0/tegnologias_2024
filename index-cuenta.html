@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<html lang="es">
-    <!-- Sección de Header -->
+<html lang="es">  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Web con Menú</title>
     <link rel="stylesheet" href="styles-cuenta.css">
-    <script src="BOTON.js"></script>
+    <script>
+function toggleDropdown(event) {
+    event.preventDefault(); // Previene el comportamiento por defecto del enlace
+    const dropdown = event.currentTarget.parentElement;
+    dropdown.classList.toggle('active');
+}
+</script>
+    
 </head>
 <body>
     <header>
         <div class="LOGO">
-            <a href="INDEX.HTML">
+            <a href="INDEX-Usuarios.HTML">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
         <div class="contenedor">
             <nav>
                 <ul>
-                    <li><a href="#Ayuda">AYUDA</a></li>
+                    <li><a href="#AGENDA">AGENDA</a></li>
+                    
                     <li class="dropdown">
-                        <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <a href="#Deportes" onclick="toggleDropdown(event)">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="box.html">BOXEO</a></li>
                             <li><a href="Aerobicos.html">AEROBICOS</a></li>
                             <li><a href="pesas.html">PESAS</a></li>
                         </ul>
-                    </li>
-                    <li><a href="#Agenda">AGENDA</a></li>
+                    </li>                    
                 </ul>
             </nav>
-             <div class="Perfil">
-    <a href="index-cuenta.html">
-        <img src="./ICONO PERFIL.png" alt="Perfil">
-    </a>
-</div>
-                
+            <div class="Perfil">
+                <a href="index-cuenta.html">
+                    <img src="./ICONO PERFIL.png" alt="Perfil">
+                </a>
+            </div>
         </div>
-        
     </header>
 
     <main>
@@ -58,7 +62,7 @@
         
 
         <!-- Sección de agenda -->
-        <section class="agenda-section">
+        <section id="AGENDA"class="agenda-section">
             <h2>Agenda</h2>
 
                 <!-- Meses -->
@@ -110,10 +114,7 @@
                 <div class="class-box"></div>
 
                 <div class="hour">10:00</div>
-                <div class="class-box">
-                    <button id="miBoton" onclick="obtenerDatosFiltrados()">Mostrar Horarios</button>  
-                    <div id="datos"></div>               
-                </div>
+                <div class="class-box"></div>
                 <div class="class-box"></div>
                 <div class="class-box"></div>
                 <div class="class-box"></div>
@@ -191,10 +192,10 @@
 
         <section class="agenda-formulario">
             <h1>Gimnasio - Programación de Clases</h1>
-                <form id="formularioClase">
+               <form id="formularioClase">
                    <label for="clase">Clase:</label>
                         <select id="clase" name="clase" required>
-                            <option value="Aerobicos">Aeróbicos</option>
+                            <option value="Aeróbicos">Aeróbicos</option>
                             <option value="Boxeo">Boxeo</option>
                              <option value="Pesas">Pesas</option>
                         </select>
@@ -224,7 +225,6 @@
             <button type="submit">Añadir Clase</button>
             <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
         </form>
-        <script src="Formulario2.js"></script>
         </section>
         
         <!--HorariosActuales-->
@@ -243,14 +243,14 @@
                 <tbody id="tablaClases">
                 </tbody>
             </table>  
-        
+        <script src="Formulario.js"></script>
         </section>
 
         <!-- Sección de datos de pago -->
         <section class="payment-section">
             <h2>Datos de Pago</h2>
         
-            <div class="payment-grid">
+            
                 <!-- Próximos Pagos -->
                 <div class="payment-column">
                     <h3>Próximos Pagos</h3>
@@ -264,11 +264,7 @@
                         <span>25-10-2024</span>
                         <span>$XX.XXX</span>
                     </div>
-                    <div class="payment-item">
-                        <span>Mensualidad</span>
-                        <span>30-11-2024</span>
-                        <span>$XX.XXX</span>
-                    </div>
+                    
                 </div>
         
                 <!-- Pagos Realizados -->
@@ -279,11 +275,7 @@
                         <span>30-09-2024</span>
                         <span>$XX.XXX</span>
                     </div>
-                    <div class="payment-item">
-                        <span>Clase Box</span>
-                        <span>25-09-2024</span>
-                        <span>$XX.XXX</span>
-                    </div>
+                    
                 </div>
         
                 <!-- Información de tarjeta -->
@@ -291,30 +283,15 @@
                     <h3>Nº Tarjeta</h3>
                     <p>XXXX-XXXX-XXXX-XXXX</p>
                 </div>
-            </div>
+           
         </section>
 
         <!-- Cerrar sesión -->
         <div class="cerrar-sesion">
-            <button>Cerrar Sesión</button>
+            <a href="INDEX.HTML">
+                <button>Cerrar Sesión</button>
+            </a>
         </div>
-        <!-- Sección de Ayuda -->
-        <footer>
-            <div class="footer-content">
-                <div class="left">
-                    <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
-                    Puedes acercarte a nuestros canales de comunicación.</p>
-                </div>
-                <div class="contacto-imagen">
-                    <img src="logo.png" alt="Imagen de contacto">
-                </div>
-                <div class="right">
-                    <p>Nos encuentras en nuestras redes sociales como:</p>
-                    <p>@CuentaFalsa_Trabajo</p>
-                    <p>Correo: XxDestroyer777Xx@gmail.com</p>
-                </div>
-            </div>
-        </footer>
     </main>
 </body>
 </html>

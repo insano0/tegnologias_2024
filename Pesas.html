@@ -17,7 +17,13 @@
         <div class="contenedor">
             <nav>
                 <ul>
-                    <li><a href="#Ayuda">AYUDA</a></li>
+                    <li><a href="#contacto" class="btn">AYUDA</a></li>
+                    <li><a href="#AGENDA" class="btn">AGENDA</a></li>
+                    <style>
+                        #AGENDA {
+                          scroll-margin-top: 60px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
+                        }
+                      </style>
                     <li class="dropdown">
                         <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
@@ -26,11 +32,11 @@
                             <li><a href="pesas.html">PESAS</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Agenda">AGENDA</a></li>
+                    
                 </ul>
             </nav>
              <div class="Perfil">
-                <a href="index-cuenta.html">
+                <a href="index-registro.html">
                     <img src="./ICONO PERFIL.png" alt="Perfil">
                 </a>
                 
@@ -79,7 +85,7 @@
         </section>
         
         <!-- Sección de agenda -->
-        <section class="agenda-section">
+        <section id="AGENDA"class="agenda-section">
             <h2>Agenda</h2>
 
                 <!-- Meses -->
@@ -204,26 +210,44 @@
                
             </div>
         </section>
-        
+        <section class="iniciodesesion">
+            <div class="Iniciodesesion2">
+                <img src="FONDO INICIO DE SESION.jpg" alt="Imagen 1">
+                <div class="CUADROINICIOSESION">
+                    <div class="CUADROINICIOSESION2">
+                        <span class="inicio2">INICIO DE SESION</span>
+                        <input type="text" placeholder="Ingresa tu correo electronico" class="input-registro">
+                        <input type="text" placeholder="Ingresa tu contraseña" class="input-registro">     
+                        <div class="InicioBoton">
+                            <a href="Pesas-Usuarios.html">
+                                <button class="InicioBoton" type="submit">Iniciar Sesion</button>    
+                            </a>
+                        </div>    
+                        <h1>¿No tienes cuenta? <a href="index-registro.html">Regístrate aquí</a></h1>
+                    </div>
+                    
+                </div>
+            </div>
                 
-    <!-- Sección de Ayuda -->
+        </section>   
+                
     <footer>
-        <div class="footer-content">
-            <div class="left">
-                <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
-                Puedes acercarte a nuestros canales de comunicación.</p>
+        <section id="contacto">
+            <div class="contacto-contenido">
+                <div class="contacto-derecha">
+                    <p>Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros.</p>
+                    <p>Email: info@ejemplo.com</p>
+                </div>
+                <div class="contacto-imagen">
+                    <img src="logo.png" alt="Imagen de contacto">
+                </div>
+                <div class="contacto-izquierda">
+                    <p>Teléfono: +34 123 456 789</p>
+                    <p>Dirección: Calle Ejemplo, 123, 28001 Madrid, España</p>
+                </div>
             </div>
-            <div class="contacto-imagen">
-                <img src="logo.png" alt="Imagen de contacto">
-            </div>
-            <div class="right">
-                <p>Nos encuentras en nuestras redes sociales como:</p>
-                <p>@CuentaFalsa_Trabajo</p>
-                <p>Correo: XxDestroyer777Xx@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-        
+        </section>
+    </footer>  
     </main>
 </body>
 </html>

@@ -5,28 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Web con Menú</title>
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="pesas_bienvenida.css">
+    <link rel="stylesheet" href="Pesas.css">
 </head>
 <body>
     <header>
         <div class="LOGO">
-            <a href="INDEX.HTML">
+            <a href="INDEX-Usuarios.HTML">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
         <div class="contenedor">
             <nav>
                 <ul>
-                    <li><a href="#Ayuda">AYUDA</a></li>
+                    <li><a href="#contacto" class="btn">AYUDA</a></li>
+                    <li><a href="#AGENDA" class="btn">AGENDA</a></li>
+                    <style>
+                        #AGENDA {
+                          scroll-margin-top: 60px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
+                        }
+                      </style>
                     <li class="dropdown">
                         <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="box_bienvenida.html">BOXEO</a></li>
-                            <li><a href="Aerobicos_bienvenida.html">AEROBICOS</a></li>
-                            <li><a href="pesas_bienvenida.html">PESAS</a></li>
+                            <li><a href="box-Usuarios.html">BOXEO</a></li>
+                            <li><a href="Aerobicos-Usuarios.html">AEROBICOS</a></li>
+                            <li><a href="Pesas-Usuarios.html">PESAS</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Agenda">AGENDA</a></li>
+                    
                 </ul>
             </nav>
              <div class="Perfil">
@@ -37,11 +43,6 @@
             </div>
                 
         </div>
-
-         <!-- Mostrar el nombre de usuario (cambiar id=username display/ eliminar usuario)-->
-         <div class="username-display">
-            <h1 id="username-display">usuario</h1>
-           </div>
         
     </header>
 
@@ -84,7 +85,7 @@
         </section>
         
         <!-- Sección de agenda -->
-        <section class="agenda-section">
+        <section id="AGENDA"class="agenda-section">
             <h2>Agenda</h2>
 
                 <!-- Meses -->
@@ -209,26 +210,80 @@
                
             </div>
         </section>
+         <!-- Sección de formulario de agregar clases -->
+
+      <section class="agenda-formulario">
+        <h1>Gimnasio - Programación de Clases</h1>
+           <form id="formularioClase">
+               <label for="clase">Clase:</label>
+                    <select id="clase" name="clase" required>                        
+                         <option value="Pesas">Pesas</option>
+                    </select>
+
+                <label for="mes">Mes:</label>
+                    <select id="mes" name="mes" required>
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
+
+        <label for="dia">Día:</label>
+        <input type="number" id="dia" name="dia" min="1" max="31" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <button type="submit">Añadir Clase</button>
+        <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
+    </form>
+    </section>
+    
+    <!--HorariosActuales-->
+
+    <section class="TablaClase2">
+        <table>
+            <thead>
+                <tr>
+                    <th>Clase</th>
+                    <th>Mes</th>
+                    <th>Día</th>
+                    <th>Hora</th>
+                    <th class="hidden">Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaClases">
+            </tbody>
+        </table>  
+    <script src="Formulario.js"></script>
+    </section>
         
                 
-    <!-- Sección de Ayuda -->
     <footer>
-        <div class="footer-content">
-            <div class="left">
-                <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
-                Puedes acercarte a nuestros canales de comunicación.</p>
+        <section id="contacto">
+            <div class="contacto-contenido">
+                <div class="contacto-derecha">
+                    <p>Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros.</p>
+                    <p>Email: info@ejemplo.com</p>
+                </div>
+                <div class="contacto-imagen">
+                    <img src="logo.png" alt="Imagen de contacto">
+                </div>
+                <div class="contacto-izquierda">
+                    <p>Teléfono: +34 123 456 789</p>
+                    <p>Dirección: Calle Ejemplo, 123, 28001 Madrid, España</p>
+                </div>
             </div>
-            <div class="contacto-imagen">
-                <img src="logo.png" alt="Imagen de contacto">
-            </div>
-            <div class="right">
-                <p>Nos encuentras en nuestras redes sociales como:</p>
-                <p>@CuentaFalsa_Trabajo</p>
-                <p>Correo: XxDestroyer777Xx@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-        
+        </section>
+    </footer>  
     </main>
 </body>
 </html>

@@ -3,8 +3,23 @@ window.onload = function () {
         event.preventDefault(); // Prevenir el envío predeterminado del formulario
 
         const formData = new FormData(this); // Crear un objeto FormData desde el formulario
+        let allFieldsFilled = true;
+
+        // Verificar que todos los campos estén llenos
+        for (const [key, value] of formData.entries()) {
+            if (!value) {
+                allFieldsFilled = false;
+                break;
+            }
+        }
+
+        if (!allFieldsFilled) {
+            alert("Por favor, completa todos los campos antes de enviar el formulario.");
+            return;
+        }
 
         // Registrar los datos del formulario en la consola
+        console.log("Datos del formulario antes de enviarlos:");
         for (const [key, value] of formData.entries()) {
             console.log(`${key}: ${value}`);
         }
@@ -17,14 +32,13 @@ window.onload = function () {
             if (xhr.readyState === 4) {  // Solicitud completada
                 if (xhr.status === 200) {  // Si la solicitud fue exitosa
                     try {
-                        //console.log(xhr.responseText);  // Imprimir la respuesta en la consola
                         const response = JSON.parse(xhr.responseText);  // Parsear la respuesta JSON
                         console.log(response);  // Imprimir la respuesta en la consola
 
                         // Mostrar un mensaje de éxito
                         alert(response.mensaje || "Datos guardados");
 
-                        // Limpiar el formulario (Aquí es donde se limpia el formulario)
+                        // Limpiar el formulario
                         document.getElementById('miFormulario').reset();
                     } catch (error) {
                         console.error('Error al parsear la respuesta JSON:', error);
@@ -38,4 +52,4 @@ window.onload = function () {
         // Enviar los datos del formulario al servidor
         xhr.send(formData);  // Enviar el objeto FormData
     });
-}
+};

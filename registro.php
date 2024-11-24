@@ -1,11 +1,8 @@
 <?php
-include 'db_connection.php'; // Incluir el archivo de conexión
-
-// Establecer el tipo de contenido de la respuesta a JSON
+// process.php
+include 'db_connection.php';
 header('Content-Type: application/json');
-
-// Manejar errores de reporte
-error_reporting(E_ALL); // Cambiar a E_ALL para ver todos los errores
+error_reporting(E_ALL); // Mostrar todos los errores
 ini_set('display_errors', 1); // Mostrar errores en la salida
 
 // Inicializar la variable de respuesta
@@ -23,11 +20,18 @@ $correo = $conn->real_escape_string($_POST['correo']);
 $usuario = $conn->real_escape_string($_POST['usuario']);
 $contrasena = $conn->real_escape_string($_POST['contrasena']);
 
-// Consulta para insertar los datos
-$sql_insert = "INSERT INTO registro (correo, usuario, contrasena) VALUES ('$correo', '$usuario', PASSWORD('$contrasena'))";
+// Guardar las variables en el array de respuesta (para verificación)
+$response['datos_recibidos'] = [
+    'correo' => $correo,
+    'usuario' => $usuario,
+    'contrasena' => $contrasena
+];
 
-if ($conn->query($sql_insert) === TRUE) {
-    $response["mensaje"] = "Nuevo registro creado exitosamente";
+// Consulta para insertar los datos en la tabla `personas`
+$sql = "INSERT INTO `registro` (`id`, `correo`, `usuario`, `contrasena`) VALUES (NULL, '$correo', '$usuario', PASSWORD('$contrasena'))";
+
+if ($conn->query($sql) === TRUE) {
+    $response["mensaje"] = "Registro exitoso";
 } else {
     $response["mensaje"] = "Error en el registro: " . $conn->error; // Incluir el error específico
 }

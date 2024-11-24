@@ -3,89 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web con Menú</title>
+    <title>Bienvenido</title>
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Pesas.css">
+    <link rel="stylesheet" href="pagina_bienvenida.css">
 </head>
 <body>
     <header>
         <div class="LOGO">
-            <a href="INDEX-Usuarios.HTML">
+            <a href="INDEX.HTML">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
         <div class="contenedor">
             <nav>
                 <ul>
-                    <li><a href="#contacto" class="btn">AYUDA</a></li>
-                    <li><a href="#AGENDA" class="btn">AGENDA</a></li>
-                    <style>
-                        #AGENDA {
-                          scroll-margin-top: 60px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
-                        }
-                      </style>
+                    <li><a href="#Ayuda">AYUDA</a></li>
                     <li class="dropdown">
                         <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="box-Usuarios.html">BOXEO</a></li>
-                            <li><a href="Aerobicos-Usuarios.html">AEROBICOS</a></li>
-                            <li><a href="Pesas-Usuarios.html">PESAS</a></li>
+                            <li><a href="box.html">BOXEO</a></li>
+                            <li><a href="Aerobicos.html">AEROBICOS</a></li>
+                            <li><a href="pesas.html">PESAS</a></li>
+                            
                         </ul>
                     </li>
-                    
+                    <li><a href="#Agenda">AGENDA</a></li>
                 </ul>
             </nav>
-             <div class="Perfil">
+            <div class="Perfil">
                 <a href="index-cuenta.html">
                     <img src="./ICONO PERFIL.png" alt="Perfil">
                 </a>
-                
             </div>
                 
         </div>
-        
+         <!-- Mostrar el nombre de usuario (cambiar id=username display/ eliminar usuario)-->
+            <div class="username-display">
+                <h1 id="username-display">usuario</h1>
+        </div>
     </header>
 
     <main>
         <section id="inicio">
-            <img src="Pesas.webp" alt="img_1">
+            <img src="INICIO.jpg" alt="Logo">
             <div class="TituloInicio">
-                <h1>Pon a prueba tus   </h1>
-                <h1>limites</h1>
+                <h1>¿Que realizo primero?</h1>
+                <h2>Amenudo nos hacemos esa pregunta antes de empezar con nuestros entrenamientos, no seria mejor entrenar con alguien con conocimientos y las capacidades para ayduarte a llegar a tu objetivo!</h2>
             </div>
         </section>
 
         <section id="Frase">
             <div class="FraseMotivacional">
-                <h1>Pesas</h1>
-                <h2>El ejercicio con pesas es una manera habitual de ejercicio, realizado propiamente, el entrenamiento con pesas puede proporcionar beneficios funcionales significativos, como el aumento de la masa muscular, la ayuda en la reducción de peso, y una mejora en la salud en general y del bienestar.
-                </h2>        
-                    
+                <h1>¿Que opciones tengo para entrenar?</h1>
+                <h2>Tenemos presente que todos nuestros clientes son diferentes, parte de un objetivo es como llegar a ellos y gracias a estos diferentes deportes que manejamos, puedes llegar a explorar muchos caminos para llegar a tu resultado esperado!! </h2>
+                <div class="arrow-down"></div>
             </div>
             
         </section>
 
-        <section id="Slider">
-            <div class="sliderC"> 
-                <h1> <center>¿Que ejercicios realizamos?</center></h1>
-            <div class="slider1">
-                
-                <p>
-                   <h3><center>Press de Banca</center></h3>
-                   <h3><center>Aperturas</center></h3>
-                   <h3><center>Remo</center></h3>
-                   <h3><center>Peso Muerto</center></h3>
-                   <h3><center>Elevaciones</center></h3>
-                  
-                </p>
-                
+        <section id="DEPORTES">
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="BOxeo.jpeg" alt="Imagen 1">
+                    </div>
+                    <div class="slide">
+                        <img src="Aerobicos.jpg" alt="Imagen 2">
+                    </div>
+                    <div class="slide">
+                        <img src="Pesas.webp" alt="Imagen 3">
+                    </div>
+                </div>
+                <button class="btn-sobre-carrusel">Click para ver mas</button>
             </div>
-            </div>  
-            
         </section>
-        
-        <!-- Sección de agenda -->
-        <section id="AGENDA"class="agenda-section">
+        <section class="agenda-section">
             <h2>Agenda</h2>
 
                 <!-- Meses -->
@@ -210,80 +202,40 @@
                
             </div>
         </section>
-         <!-- Sección de formulario de agregar clases -->
-
-      <section class="agenda-formulario">
-        <h1>Gimnasio - Programación de Clases</h1>
-           <form id="formularioClase">
-               <label for="clase">Clase:</label>
-                    <select id="clase" name="clase" required>                        
-                         <option value="Pesas">Pesas</option>
-                    </select>
-
-                <label for="mes">Mes:</label>
-                    <select id="mes" name="mes" required>
-                        <option value="Enero">Enero</option>
-                        <option value="Febrero">Febrero</option>
-                        <option value="Marzo">Marzo</option>
-                        <option value="Abril">Abril</option>
-                        <option value="Mayo">Mayo</option>
-                        <option value="Junio">Junio</option>
-                        <option value="Julio">Julio</option>
-                        <option value="Agosto">Agosto</option>
-                        <option value="Septiembre">Septiembre</option>
-                        <option value="Octubre">Octubre</option>
-                        <option value="Noviembre">Noviembre</option>
-                        <option value="Diciembre">Diciembre</option>
-                    </select>
-
-        <label for="dia">Día:</label>
-        <input type="number" id="dia" name="dia" min="1" max="31" required>
-
-        <label for="hora">Hora:</label>
-        <input type="time" id="hora" name="hora" required>
-
-        <button type="submit">Añadir Clase</button>
-        <div class="error" id="errorMensaje">Por favor, completa todos los campos.</div>
-    </form>
-    </section>
-    
-    <!--HorariosActuales-->
-
-    <section class="TablaClase2">
-        <table>
-            <thead>
-                <tr>
-                    <th>Clase</th>
-                    <th>Mes</th>
-                    <th>Día</th>
-                    <th>Hora</th>
-                    <th class="hidden">Acción</th>
-                </tr>
-            </thead>
-            <tbody id="tablaClases">
-            </tbody>
-        </table>  
-    <script src="Formulario.js"></script>
-    </section>
-        
+        <section class="iniciodesesion">
+            <div class="Iniciodesesion2">
+                <img src="FONDO INICIO DE SESION.jpg" alt="Imagen 1">
+                <div class="CUADROINICIOSESION">
+                    <div class="CUADROINICIOSESION2">
+                        <span class="inicio2">INICIO DE SESION</span>
+                        <input type="text" placeholder="Ingresa tu correo electronico" class="input-registro">
+                        <input type="text" placeholder="Ingresa tu contraseña" class="input-registro">     
+                        <button class="InicioBoton" type="submit">Iniciar Sesion</button>    
+                        <h1>¿No tienes cuenta? <a href="index-registro.html">Regístrate aquí</a></h1>
+                    </div>
+                    
+                </div>
+            </div>
                 
-    <footer>
-        <section id="contacto">
-            <div class="contacto-contenido">
-                <div class="contacto-derecha">
-                    <p>Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros.</p>
-                    <p>Email: info@ejemplo.com</p>
+        </section>
+        <!-- Sección de Ayuda -->
+        <footer>
+            <div class="footer-content">
+                <div class="left">
+                    <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
+                    Puedes acercarte a nuestros canales de comunicación.</p>
                 </div>
                 <div class="contacto-imagen">
                     <img src="logo.png" alt="Imagen de contacto">
                 </div>
-                <div class="contacto-izquierda">
-                    <p>Teléfono: +34 123 456 789</p>
-                    <p>Dirección: Calle Ejemplo, 123, 28001 Madrid, España</p>
+                <div class="right">
+                    <p>Nos encuentras en nuestras redes sociales como:</p>
+                    <p>@CuentaFalsa_Trabajo</p>
+                    <p>Correo: XxDestroyer777Xx@gmail.com</p>
                 </div>
             </div>
-        </section>
-    </footer>  
+
+        </footer>
     </main>
 </body>
 </html>

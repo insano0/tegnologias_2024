@@ -8,25 +8,20 @@ body {
     
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(180deg, #3E61C0, #08173E);
+    background-color: #1e1e2c;
     
 }
 
 /* Header styles............................................................................................... */
 header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(to bottom, #08173E, #3E61C0);
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%; /* Ancho ajustado al 80% del contenedor padre */
-    height: 125px; /* Altura ajustada a 150 píxeles */
-    
+    background-image: linear-gradient(to bottom, #0A545D, #15B0C3);
+    padding: 10px 20px;
+    color: white;
 }
 
-   
 
 img {
 
@@ -34,17 +29,14 @@ img {
 
 }
 header .LOGO img {
-    height: 100px;
-    width: auto;
+    height: 50px;
 }
 
 
 header .contenedor {
     display: flex;
-    max-width: 80%;
-    justify-content: space-between;
     align-items: center;
-    gap: 25px;    
+    gap: 20px;
 }
 
 
@@ -54,54 +46,18 @@ header nav ul {
     gap: 20px;
 }
 
-nav ul li {
-    list-style-type: none;
-    background-color: #323741;
-    padding: 10px 25px; /* Ajusta el padding según necesites */
-    border-radius: 10px;
-    overflow: visible;
+header nav ul li {
     position: relative;
-    width: 200px; /* Ancho del botón */
-    height: 50px; /* Altura del botón */
-    display: flex; /* Para alinear el contenido con flexbox */
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    font-size: 20px; /* Tamaño de la letra */
-    text-align: center; /* Centra el texto */
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #323741;
-    border-radius: 10px;
-    list-style-type: none;
-    padding: 10px;
-    top: 100%;
-    left: 0;
-}
-
-.dropdown.active .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li {
-    padding: 5px 0;
 }
 
 header nav ul li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
-    position: relative;
 }
 
 header .Perfil img {
-    height: 80px;
+    height: 40px;
     border-radius: 50%;
 }
 
@@ -307,11 +263,8 @@ header nav ul li:hover .dropdown-menu {
 /* Seccion de Pagos */
 .payment-section {
     margin-top: 20px;
-<<<<<<< HEAD
     width: 100%;
     justify-items: center;
-=======
->>>>>>> 9cf94429bc46a5bbfe7e65d37d9ed7d5e0eeb359
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -485,6 +438,43 @@ th, td {
 .hidden {
     display: none;
 }
+
+/* Seccion de Ayuda */
+footer {
+    background-color: #04656b;
+    padding: 20px 0;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-content .contacto-imagen {
+
+    width: 400px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     header .contenedor {
@@ -500,6 +490,7 @@ th, td {
     footer .footer-content {
         flex-direction: column;
         gap: 10px;
+        
     }
 
     .registro-section .input-registro {

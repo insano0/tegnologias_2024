@@ -1,284 +1,237 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device, initial-scale=1.0">
-    <title>Mi Página Web con Menú</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function toggleDropdown(event) {
-        event.preventDefault(); // Previene el comportamiento por defecto del enlace
-        const dropdown = event.currentTarget.parentElement;
-        dropdown.classList.toggle('active');
-        }
-    </script>
-</head>
-<body>
-    <header>
-        <div class="LOGO">
-            <a href="INDEX.HTML">
-                <img src="logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="contenedor">
-            <nav>
-                <ul>
-                    
-                    <li><a href="#AGENDA" class="btn">AGENDA</a></li>
-                    <style>
-                        #AGENDA {
-                          scroll-margin-top: 60px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
-                        }
-                      </style>
-                    <li class="dropdown">
-                        <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="box.html">BOXEO</a></li>
-                            <li><a href="Aerobicos.html">AEROBICOS</a></li>
-                            <li><a href="pesas.html">PESAS</a></li>
-                        </ul>
-                    </li>
-                    
-                </ul>
-            </nav>
-            <div class="Perfil">
-                <a href="index-registro.html">
-                    <img src="./ICONO PERFIL.png" alt="Perfil">
-                </a>
-            </div>
-                
-        </div>
-        
-    </header>
-
-    <main>
-        
-        <section id="inicio">   
-            <img src="INICIO.jpg" alt="Logo">
-            <div class="TituloInicio">
-                <h1>¿Que realizo primero?</h1>
-                <h2>Amenudo nos hacemos esa pregunta antes de empezar con nuestros entrenamientos, no seria mejor entrenar con alguien con conocimientos y las capacidades para ayduarte a llegar a tu objetivo!</h2>
-            </div>
-        </section>
-
-        <section id="Frase">
-            <div class="FraseMotivacional">
-                <h1>¿Que opciones tengo para entrenar?</h1>
-                <h2>Tenemos presente que todos nuestros clientes son diferentes, parte de un objetivo es como llegar a ellos y gracias a estos diferentes deportes que manejamos, puedes llegar a explorar muchos caminos para llegar a tu resultado esperado!! </h2>
-                <div class="arrow-down"></div>
-            </div>
-            
-        </section>
-
-        <section id="DEPORTES">
-            <div class="carousel">
-                <div class="slides">
-                    <div class="slide active">
-                        <img src="BOxeo.jpeg" alt="Imagen 1">
-                    </div>
-                    <div class="slide">
-                        <img src="Aerobicos.jpg" alt="Imagen 2">
-                    </div>
-                    <div class="slide">
-                        <img src="Pesas.webp" alt="Imagen 3">
-                    </div>
-                </div>
-                <button class="btn-sobre-carrusel"><h1>Click para ver mas</h1></button>
-            </div>
-        </section>
-        <section id="AGENDA"class="agenda-section">
-            <h2>Agenda</h2>
-
-                <!-- Meses -->
-                 
-    <div class="month-carousel">
-        <button class="carousel-btn prev-btn">&#10094;</button>
-        <div class="carousel-wrapper">
-            <ul class="carousel-list">
-                <li>Enero</li>
-                <li>Febrero</li>
-                <li>Marzo</li>
-                <li>Abril</li>
-                <li>Mayo</li>
-                <li>Junio</li>
-                <li>Julio</li>
-                <li>Agosto</li>
-                <li>Septiembre</li>
-                <li>Octubre</li>
-                <li>Noviembre</li>
-                <li>Diciembre</li>
-            </ul>
-        </div>
-        <button class="carousel-btn next-btn">&#10095;</button>
-    </div>
-            <!-- Dias -->    
-            <div class="agenda-grid">
-                <div class="hour-label">Horas</div>
-                <div class="day-label">Lunes</div>
-                <div class="day-label">Martes</div>
-                <div class="day-label">Miércoles</div>
-                <div class="day-label">Jueves</div>
-                <div class="day-label">Viernes</div>
-                <div class="day-label">Sábado</div>
-        
-                <!-- Horarios -->
-                <div class="hour">08:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-        
-                <div class="hour">09:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">10:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">11:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">12:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">13:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">14:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">15:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">16:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">17:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-
-                <div class="hour">18:00</div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>
-                <div class="class-box"></div>       
-               
-            </div>
-        </section>
-        <section class="iniciodesesion">
-            <div class="Iniciodesesion2">
-                <img src="FONDO INICIO DE SESION.jpg" alt="Imagen 1">
-                <div class="CUADROINICIOSESION">
-                    <div class="CUADROINICIOSESION2">
-                        <span class="inicio2">INICIO DE SESION</span>
-                        <input type="text" placeholder="Ingresa tu correo electronico" class="input-registro">
-                        <input type="text" placeholder="Ingresa tu contraseña" class="input-registro">   
-                        
-                        <div class="InicioBoton">
-                            <a href="INDEX-Usuarios.HTML">
-                                <button class="InicioBoton" type="submit">Iniciar Sesion</button>    
-                            </a>
-                        </div>                           
-                        <h1>¿No tienes cuenta? <a href="index-registro.html">Regístrate aquí</a></h1>
-                    </div>
-                    
-                </div>
-            </div>
-                
-        </section>       
-          
-    </main>
-</body>
-
-    
-
-    <script>
-        // Agregar un evento de escucha al formulario para manejar el envío
-        document.getElementById('reservaForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar el envío tradicional del formulario
-
-            // Recoger los datos del formulario
-            let formData = new FormData(this);
-
-            // Enviar los datos a reservar.php usando fetch
-            fetch('backend/reservar.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text()) // Obtener la respuesta en texto
-            .then(data => {
-                alert(data); // Mostrar la respuesta en una alerta
-            })
-            .catch(error => {
-                console.error('Error:', error); // Mostrar errores en la consola
-            });
-        });
-    </script>
-</body>
-<footer>
-    <section id="contacto">            
-        <div class="contacto-contenido">
-            <div class="contacto-derecha">
-                <p>Estamos aquí para ayudarte.</p>
-                <p> No dudes en ponerte en contacto con nosotros.</p>
-                <p>Email: info@ejemplo.com</p>
-            </div>
-            <div class="contacto-imagen">
-                <img src="logo.png" alt="Imagen de contacto">
-            </div>
-            <div class="contacto-izquierda">
-                <p>Teléfono: +34 123 456 789</p>
-                <p>Dirección: Calle Ejemplo, 123, 28001 Madrid, España</p>
-            </div>
-        </div>
-    </section>
-</footer> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web con Menú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="LOGO">
+            <a href="INDEX.HTML">
+                <img src="logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="contenedor">
+            <nav>
+                <ul>
+                    <li><a href="#Ayuda">AYUDA</a></li>
+                    <li class="dropdown">
+                        <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="box.html">BOXEO</a></li>
+                            <li><a href="Aerobicos.html">AEROBICOS</a></li>
+                            <li><a href="pesas.html">PESAS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Agenda">AGENDA</a></li>
+                </ul>
+            </nav>
+            <div class="Perfil">
+                <a href="index-cuenta.html">
+                    <img src="./ICONO PERFIL.png" alt="Perfil">
+                </a>
+            </div>
+                
+        </div>
+        
+    </header>
+
+    <main>
+        <section id="inicio">
+            <img src="INICIO.jpg" alt="Logo">
+            <div class="TituloInicio">
+                <h1>¿Que realizo primero?</h1>
+                <h2>Amenudo nos hacemos esa pregunta antes de empezar con nuestros entrenamientos, no seria mejor entrenar con alguien con conocimientos y las capacidades para ayduarte a llegar a tu objetivo!</h2>
+            </div>
+        </section>
+
+        <section id="Frase">
+            <div class="FraseMotivacional">
+                <h1>¿Que opciones tengo para entrenar?</h1>
+                <h2>Tenemos presente que todos nuestros clientes son diferentes, parte de un objetivo es como llegar a ellos y gracias a estos diferentes deportes que manejamos, puedes llegar a explorar muchos caminos para llegar a tu resultado esperado!! </h2>
+                <div class="arrow-down"></div>
+            </div>
+            
+        </section>
+
+        <section id="DEPORTES">
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="BOxeo.jpeg" alt="Imagen 1">
+                    </div>
+                    <div class="slide">
+                        <img src="Aerobicos.jpg" alt="Imagen 2">
+                    </div>
+                    <div class="slide">
+                        <img src="Pesas.webp" alt="Imagen 3">
+                    </div>
+                </div>
+                <button class="btn-sobre-carrusel">Click para ver mas</button>
+            </div>
+        </section>
+        <section class="agenda-section">
+            <h2>Agenda</h2>
+
+                <!-- Meses -->
+    <div class="month-carousel">
+        <button class="carousel-btn prev-btn">&#10094;</button>
+        <div class="carousel-wrapper">
+            <ul class="carousel-list">
+                <li>Enero</li>
+                <li>Febrero</li>
+                <li>Marzo</li>
+                <li>Abril</li>
+                <li>Mayo</li>
+                <li>Junio</li>
+                <li>Julio</li>
+                <li>Agosto</li>
+                <li>Septiembre</li>
+                <li>Octubre</li>
+                <li>Noviembre</li>
+                <li>Diciembre</li>
+            </ul>
+        </div>
+        <button class="carousel-btn next-btn">&#10095;</button>
+    </div>
+            <!-- Dias -->    
+            <div class="agenda-grid">
+                <div class="hour-label">Horas</div>
+                <div class="day-label">Lunes</div>
+                <div class="day-label">Martes</div>
+                <div class="day-label">Miércoles</div>
+                <div class="day-label">Jueves</div>
+                <div class="day-label">Viernes</div>
+                <div class="day-label">Sábado</div>
+        
+                <!-- Horarios -->
+                <div class="hour">08:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+        
+                <div class="hour">09:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">10:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">11:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">12:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">13:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">14:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">15:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">16:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">17:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+
+                <div class="hour">18:00</div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>
+                <div class="class-box"></div>       
+               
+            </div>
+        </section>
+        <section class="iniciodesesion">
+            <div class="Iniciodesesion2">
+                <img src="FONDO INICIO DE SESION.jpg" alt="Imagen 1">
+                <div class="CUADROINICIOSESION">
+                    <div class="CUADROINICIOSESION2">
+                        <span class="inicio2">INICIO DE SESION</span>
+                        <input type="text" placeholder="Ingresa tu correo electronico" class="input-registro">
+                        <input type="text" placeholder="Ingresa tu contraseña" class="input-registro">     
+                        <button class="InicioBoton" type="submit">Iniciar Sesion</button>    
+                        <h1>¿No tienes cuenta? <a href="index-registro.html">Regístrate aquí</a></h1>
+                    </div>
+                    
+                </div>
+            </div>
+                
+        </section>
+        <!-- Sección de Ayuda -->
+        <footer>
+            <div class="footer-content">
+                <div class="left">
+                    <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
+                    Puedes acercarte a nuestros canales de comunicación.</p>
+                </div>
+                <div class="contacto-imagen">
+                    <img src="logo.png" alt="Imagen de contacto">
+                </div>
+                <div class="right">
+                    <p>Nos encuentras en nuestras redes sociales como:</p>
+                    <p>@CuentaFalsa_Trabajo</p>
+                    <p>Correo: XxDestroyer777Xx@gmail.com</p>
+                </div>
+            </div>
+
+        </footer>
+    </main>
+</body>
 </html>

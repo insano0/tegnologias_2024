@@ -19,36 +19,37 @@ body {
 /* Header styles............................................................................................... */
 header {
     display: flex;
-    flex-direction: row;
+    position: fixed;
+    top: 0;          
+    left: 0;          
+    right: 0; 
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(to bottom, #0A545D, #15B0C3);
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%; /* Ancho ajustado al 80% del contenedor padre */
-    height: 125px; /* Altura ajustada a 150 píxeles */
-    
+    background-color: #492cb2;
+    padding: 10px 20px;
+    color: white;
+    width: 100vw;
+    z-index: 9999;
 }
 
-   
 
 img {
+    top: 0;          
+    left: 0;          
+    right: 0;
 
     max-width: 100%;
 
 }
 header .LOGO img {
-    height: 100px;
-    width: auto;
+    height: 50px;
 }
 
 
 header .contenedor {
     display: flex;
-    max-width: 80%;
-    justify-content: space-between;
     align-items: center;
-    gap: 25px;    
+    gap: 20px;
 }
 
 
@@ -58,56 +59,88 @@ header nav ul {
     gap: 20px;
 }
 
-nav ul li {
-    list-style-type: none;
-    background-color: #323741;
-    padding: 10px 25px; /* Ajusta el padding según necesites */
-    border-radius: 10px;
-    overflow: visible;
+header nav ul li {
     position: relative;
-    width: 200px; /* Ancho del botón */
-    height: 50px; /* Altura del botón */
-    display: flex; /* Para alinear el contenido con flexbox */
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    font-size: 20px; /* Tamaño de la letra */
-    text-align: center; /* Centra el texto */
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #323741;
-    border-radius: 10px;
-    list-style-type: none;
-    padding: 10px;
-    top: 100%;
-    left: 0;
-}
-
-.dropdown.active .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li {
-    padding: 5px 0;
 }
 
 header nav ul li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
-    position: relative;
 }
 
 header .Perfil img {
-    height: 80px;
+    height: 40px;
     border-radius: 50%;
 }
+/* Slider*/
+.Slider {
+    display: flex;
+    max-width: 60%; 
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.sliderC {
+    background-image: url('pesas_f.webp');
+    background-size: cover;
+    background-position: center;
+    height: 70%;
+    color: white; /* Para que el texto sea visible sobre la imagen */
+}
+
+
+.sliderC h1 {
+    font-size: clamp(48px, 5vw, 86px); /* Ajuste fluido de tamaño de fuente */
+  }
+.sliderC p {
+    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
+  }
+.slider1 {
+    
+    height: 200px; 
+    overflow-y: scroll;
+    
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);/* Color de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.slider1 h3 {
+    margin: 5px 0; /* Espacio entre los elementos h3 */
+}
+
+
+
+
+
+.Perfil{
+    
+    max-width: 4.5rem;
+    max-height: 4.5rem;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+/* Menu Desplegable............................................................................................... */
+
+header nav ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #404060;
+    padding: 10px;
+    list-style: none;
+    border-radius: 5px;
+    top: 100%;
+}
+
+header nav ul li:hover .dropdown-menu {
+    display: block;
+}
+
+
 /* Main content styles ...............................................................................................*/
 
 main {

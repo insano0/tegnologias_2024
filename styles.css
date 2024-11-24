@@ -16,37 +16,40 @@ body {
     margin: 0;
 }
 
-/* Header styles............................................................................................... */
+
+/* headerrrrrrrrrrrrrrr */
 header {
     display: flex;
-    position: fixed;
-    top: 0;          
-    left: 0;          
-    right: 0; 
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #0c6c7c;
-    padding: 10px 20px;
-    color: white;
-    width: 100vw;
-    z-index: 9999;
+    background-image: linear-gradient(to bottom, #0A545D, #15B0C3);
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%; /* Ancho ajustado al 80% del contenedor padre */
+    height: 125px; /* Altura ajustada a 150 píxeles */
+    
 }
 
+   
 
 img {
-    
+
     max-width: 100%;
 
 }
 header .LOGO img {
-    height: 50px;
+    height: 100px;
+    width: auto;
 }
 
 
 header .contenedor {
     display: flex;
+    max-width: 80%;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 25px;    
 }
 
 
@@ -56,37 +59,56 @@ header nav ul {
     gap: 20px;
 }
 
-header nav ul li {
+nav ul li {
+    list-style-type: none;
+    background-color: #323741;
+    padding: 10px 25px; /* Ajusta el padding según necesites */
+    border-radius: 10px;
+    overflow: visible;
+    position: relative;
+    width: 200px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    display: flex; /* Para alinear el contenido con flexbox */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    font-size: 20px; /* Tamaño de la letra */
+    text-align: center; /* Centra el texto */
+}
+
+.dropdown {
     position: relative;
 }
 
-header nav ul li a {
-    align-items: center;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header .Perfil img {
-    height: 40px;
-    border-radius: 50%;
-}
-
-/* Menu Desplegable............................................................................................... */
-header nav ul li .dropdown-menu {
+.dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #404060;
+    background-color: #323741;
+    border-radius: 10px;
+    list-style-type: none;
     padding: 10px;
-    list-style: none;
-    border-radius: 5px;
     top: 100%;
+    left: 0;
 }
 
-header nav ul li:hover .dropdown-menu {
+.dropdown.active .dropdown-menu {
     display: block;
 }
 
+.dropdown-menu li {
+    padding: 5px 0;
+}
+
+header nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+header .Perfil img {
+    height: 80px;
+    border-radius: 50%;
+}
 
 /* Main content styles ...............................................................................................*/
 
@@ -111,28 +133,27 @@ main {
 section img{
     position: center;
     width: 100%;
-    height: auto;
-    max-height: 900px;
+    height: 50%;
 }
 
 .TituloInicio {
     position: absolute; /* Posiciona el texto encima de la imagen */
-    bottom: 10%; /* Centra el texto verticalmente */
-    left: 5%; /* Centra el texto horizontalmente */   
+    bottom: 25%; /* Centra el texto verticalmente */
+    left: 50%; /* Centra el texto horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
     color: white; /* Cambia el color del texto para que sea visible sobre la imagen */
-    text-align: left; 
+    text-align: center; /* Centra el texto dentro del contenedor */
     font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
-    background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente para mayor legibilidad (opcional) */
-    padding: 0%; /* Espacio interno alrededor del texto */
-    border-radius: 5%; /* Bordes redondeados (opcional) */   
-    margin-bottom: 5%;
-     
-  }    
-.TituloInicio h1 {
-    font-size: clamp(8px, 5vw, 32px); /* Ajuste fluido de tamaño de fuente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mayor legibilidad (opcional) */
+    padding: 10px; /* Espacio interno alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados (opcional) */
+    width: 100vw;
+  }     
+  .TituloInicio h1 {
+    font-size: clamp(24px, 5vw, 32px); /* Ajuste fluido de tamaño de fuente */
   } 
-.TituloInicio h2 {
-    font-size: clamp(4px, 5vw, 18px); /* Ajuste fluido de tamaño de fuente */
+  .TituloInicio h2 {
+    font-size: clamp(12px, 5vw, 24px); /* Ajuste fluido de tamaño de fuente */
   } 
 
 
@@ -197,10 +218,12 @@ section img{
 .carousel {
     margin-left: 15vw;
     margin-right: 15vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
     display:fit-content;
     align-content: center;
     justify-content: center;
-    height: fit-content;
+    height: 50vw;
     width: auto;
     
     
@@ -394,7 +417,6 @@ section img{
     
     
     position: absolute;
-    margin-left: 25%;
     top: 50%;
     
     transform: translateY(-50%);
@@ -403,7 +425,7 @@ section img{
     border-radius: 10px;
     box-shadow: 0 0 70px rgba(0, 0, 0, 0.623);
     height: auto;
-    width: 40vw;
+    width: 100vw;
 }
 
 .CUADROINICIOSESION2 {
@@ -674,38 +696,6 @@ h1 a:hover {
         h2   {
     font-size: 20px; /* Reduce el tamaño de h2 en pantallas pequeñas */
              }
-        .CUADROINICIOSESION {
-    
-    
-            position: absolute;
-            top: 50%;
-            margin-left: 0%;
-            transform: translateY(-50%);
-            background-color:  rgba(0, 23, 36, 0.993);
-            padding: 90px;
-            border-radius: 10px;
-            box-shadow: 0 0 70px rgba(0, 0, 0, 0.623);
-            height: auto;
-            width: 100vw;
-        }
-        section img{
-            position: center;
-            width: 100%;
-            height: auto;
-        }
-        .TituloInicio {
-            position: absolute; /* Posiciona el texto encima de la imagen */
-            left: 0%; /* Centra el texto horizontalmente */   
-            color: white; /* Cambia el color del texto para que sea visible sobre la imagen */
-            text-align: left; 
-            font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
-            background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente para mayor legibilidad (opcional) */
-            padding: 5%; /* Espacio interno alrededor del texto */
-            border-radius: 5px; /* Bordes redondeados (opcional) */  
-            
-            margin-bottom: 20%;     
-          } 
-          
     
     
     }

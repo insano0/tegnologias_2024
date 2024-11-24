@@ -18,7 +18,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(to bottom, #0A545D, #15B0C3);
+    background-image: linear-gradient(to bottom, #08173E, #3E61C0);
     padding-left: 30px;
     padding-right: 30px;
     width: 100%; /* Ancho ajustado al 80% del contenedor padre */

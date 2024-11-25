@@ -6,13 +6,6 @@
     <title>Mi Página Web con Menú</title>
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="box.css">
-    <script>
-        function toggleDropdown(event) {
-        event.preventDefault(); // Previene el comportamiento por defecto del enlace
-        const dropdown = event.currentTarget.parentElement;
-        dropdown.classList.toggle('active');
-        }
-    </script> 
 </head>
 <body>
     <header>
@@ -28,7 +21,7 @@
                     <li><a href="#AGENDA" class="btn">AGENDA</a></li>
                     <style>
                         #AGENDA {
-                          scroll-margin-top: 60px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
+                          scroll-margin-top: 127px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
                         }
                       </style>
                     <li class="dropdown">
@@ -36,7 +29,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="box.html">BOXEO</a></li>
                             <li><a href="Aerobicos.html">AEROBICOS</a></li>
-                            <li><a href="Pesas.html">PESAS</a></li>
+                            <li><a href="pesas.html">PESAS</a></li>
                         </ul>
                     </li>                    
                 </ul>
@@ -241,24 +234,23 @@
     </section>   
                 
     
-        <footer>
-            <section id="contacto">            
-                <div class="contacto-contenido">
-                    <div class="contacto-derecha">
-                        <p>Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros.</p>
-                        <p>Email: info@ejemplo.com</p>
-                    </div>
-                    <div class="contacto-imagen">
-                        <img src="logo.png" alt="Imagen de contacto">
-                    </div>
-                    <div class="contacto-izquierda">
-                        <p>Teléfono: +34 123 456 789</p>
-                        <p>Dirección: Calle Ejemplo, 123, 28001 Madrid, España</p>
-                    </div>
-                </div>
-            </section>
-        </footer>
-        
+    <footer>
+        <div id="contacto"class="footer-content">
+            <div class="left">
+                <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
+                Puedes acercarte a nuestros canales de comunicación.</p>
+            </div>
+            <div class="contacto-imagen">
+                <img src="logo.png" alt="Imagen de contacto">
+            </div>
+            <div class="right">
+                <p>Nos encuentras en nuestras redes sociales como:</p>
+                <p>@CuentaFalsa_Trabajo</p>
+                <p>Correo: XxDestroyer777Xx@gmail.com</p>
+            </div>
+        </div>
+
+    </footer>
     </main>
      
 </body>

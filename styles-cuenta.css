@@ -217,8 +217,9 @@ header nav ul li:hover .dropdown-menu {
 }
 
 .carousel-wrapper {
+    
     overflow: hidden;
-    width: 100%;
+    width: 100vw;
     display: flex;
 }
 
@@ -309,6 +310,9 @@ header nav ul li:hover .dropdown-menu {
     border-radius: 10px;
     color: white;
 }
+.payment-section h2{
+    text-align:  center;
+}
 
 
 .payment-grid {
@@ -316,6 +320,7 @@ header nav ul li:hover .dropdown-menu {
     width: 80%;
     gap: 0px;
     margin-top: 20px;
+    margin-left: 10vw;
 }
 
 .proximosPagos {
@@ -342,24 +347,24 @@ header nav ul li:hover .dropdown-menu {
     border-radius: 10px;
     align-items: center;
     justify-content: space-between;
-}
+    flex-direction: row;
+    }
+
 
 .payment-item {
     display: flex;    
-    padding: 30px 0;
+    padding: 30px ;
     border-radius: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #18181f;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.payment-item:last-child {
-    border-bottom: none;
-}
+
 
 .payment-info {
-    width: 80%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
@@ -481,7 +486,7 @@ th, td {
 
 /* Seccion de Ayuda */
 footer {
-    background-color: #04656b;
+    background-color: #0A545D;
     padding: 20px 0;
     color: white;
 }
@@ -521,6 +526,7 @@ footer {
         flex-direction: column;
         gap: 10px;
         height: 80%;
+        
     }
 
     header nav ul {
@@ -559,12 +565,39 @@ footer {
     .perfil-section {
     
         text-align: center;
-        padding-top : 200px;
+        padding-top : 320px;
     }
 
     .Perfil img{
 
         scale: 0.8;
+    }
+    .payment-grid {
+        grid-template-columns: 1fr; /* Cambiar a una columna */
+        width: 75%; /* Opcional: Ajustar el ancho a 100% para pantallas pequeñas */
+    }
+
+    .payment-column {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column; /* Organiza los elementos en columnas */
+        gap: 40px; /* Espacio entre los elementos */
+    }
+
+
+    .payment-info {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
 }
@@ -600,35 +633,15 @@ footer {
         width: 200px; /* Tamaño original */
         transition: transform 0.3s ease; /* Transición suave */
     }
+    .perfil-section {
+    
+        
+        padding-top : 260px;
+    }
+    
     
     /*Media query para pantallas pequeñas */
-    .payment-grid {
-            grid-template-columns: 1fr; /* Cambiar a una columna */
-            width: 100%; /* Opcional: Ajustar el ancho a 100% para pantallas pequeñas */
-    }
-
-    .payment-column {
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        padding: 20px;
-        border-radius: 10px;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column; /* Organiza los elementos en columnas */
-        gap: 40px; /* Espacio entre los elementos */
-    }
    
-    
-    .payment-info {
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
    
 }
 @media (max-width: 768px){

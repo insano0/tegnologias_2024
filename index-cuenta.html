@@ -26,16 +26,22 @@
         <div class="contenedor">
             <nav>
                 <ul>
-                    <li><a href="#Agenda">AGENDA</a></li>
-                    
+                    <li><a href="#contacto" class="btn">AYUDA</a></li>
+                    <li><a href="#AGENDA" class="btn">AGENDA</a></li>
+                    <style>
+                        #AGENDA {
+                          scroll-margin-top: 127px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
+                        }
+                      </style>
                     <li class="dropdown">
-                        <a href="#Deportes" onclick="toggleDropdown(event)">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="box.html">BOXEO</a></li>
-                            <li><a href="Aerobicos.html">AEROBICOS</a></li>
-                            <li><a href="Pesas.html">PESAS</a></li>
+                            <li><a href="box-Usuarios.html">BOXEO</a></li>
+                            <li><a href="Aerobicos-Usuarios.html">AEROBICOS</a></li>
+                            <li><a href="Pesas-Usuarios.html">PESAS</a></li>
                         </ul>
-                    </li>                    
+                    </li>
+                    
                 </ul>
             </nav>
             <div class="Perfil">
@@ -64,7 +70,7 @@
         
 
         <!-- Sección de agenda -->
-        <section id= "Agenda" class="agenda-section">
+        <section id= "AGENDA" class="agenda-section">
             <h2>Agenda</h2>
 
                 <!-- Meses -->
@@ -292,16 +298,23 @@
                             <span>25-09-2024</span>
                             <span>$XX.XXX</span>
                         </div>
+                        <div class="payment-item">
+                            <span>Mensualidad</span>
+                            <span>30-08-2024</span>
+                            <span>$XX.XXX</span>
+                        </div>
+                       
  
+                    </div>
+                    <!-- Información de tarjeta -->
+                    <div class="payment-info">
+                        <h3>Nº Tarjeta</h3>
+                        <p>XXXX-XXXX-XXXX-XXXX</p>
                     </div>
                     
                 </div>
         
-                <!-- Información de tarjeta -->
-                <div class="payment-info">
-                    <h3>Nº Tarjeta</h3>
-                    <p>XXXX-XXXX-XXXX-XXXX</p>
-                </div>
+                
             </div>
         </section>
 

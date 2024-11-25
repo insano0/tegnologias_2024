@@ -1,28 +1,52 @@
 window.onload = function () {
     document.getElementById('miFormulario').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Evitar la envío por defecto del formulario
 
-        const formData = new FormData(this); // Create a FormData object from the form
+        const formData = new FormData(this); // Crear un objeto FormData desde el formulario
+        const jsonData = {}; // Crear un objeto para almacenar los datos en formato JSON
 
-        // You don't need to serialize form data manually; FormData does that for you
-        // FormData automatically handles file inputs, so no need for custom JSON handling
+        // Convertir FormData a JSON
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
 
-        const xhr = new XMLHttpRequest();  // Create an XMLHttpRequest
-        xhr.open('POST', 'login.php', true);  // Open a POST request to your PHP endpoint
+        const xhr = new XMLHttpRequest();  // Crear un objeto XMLHttpRequest
+        xhr.open('POST', 'login.php', true);  // Abrir una solicitud POST a tu endpoint PHP
+        xhr.setRequestHeader('Content-Type', 'application/json'); // Configurar el encabezado para enviar JSON
 
-        // When the request completes
+        // Cuando la solicitud se complete
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {  // Request completed
-                if (xhr.status === 200) {  // If the request was successful
-                    const response = JSON.parse(xhr.responseText);  // Parse the JSON response
-                    console.log(response);  // Log the response to the console
-                } else {
-                    console.error('Error in the request:', xhr.statusText);  // Log an error if something goes wrong
+            if (xhr.readyState === 4 && xhr.status === 200) {  // Solicitud completada y exitosa
+                try {
+                    const response = JSON.parse(xhr.responseText);  // Analizar la respuesta JSON
+                    console.log('Datos obtenidos del servidor:', response);
+
+                    // Manejar la respuesta del login
+                    if (response.existe) {
+                        console.log(response.mensaje);  // Mostrar mensaje de éxito
+                        document.getElementById('datos').innerHTML = response.mensaje;
+                        // Puedes añadir lógica adicional aquí si es necesario
+                    } else {
+                        console.error(response.mensaje);  // Mostrar mensaje de error
+                        document.getElementById('datos').innerHTML = response.mensaje;
+                    }
+                } catch (error) {
+                    console.error('Error al analizar la respuesta JSON:', error);
+                    document.getElementById('datos').innerHTML = 'Error al analizar la respuesta JSON.';
                 }
+            } else if (xhr.readyState === 4) {
+                console.error('Error en la solicitud:', xhr.statusText);  // Manejar errores de solicitud
+                document.getElementById('datos').innerHTML = `Error en la solicitud: ${xhr.statusText}`;
             }
         };
 
-        // Send the form data with the file to the server
-        xhr.send(formData);  // Send the FormData object, which includes the file
+        // Manejar errores de red
+        xhr.onerror = function () {
+            console.error('Error de red ocurrió durante la solicitud.');
+            document.getElementById('datos').innerHTML = 'Error de red ocurrió durante la solicitud.';
+        };
+
+        // Enviar los datos en formato JSON al servidor
+        xhr.send(JSON.stringify(jsonData));  // Convertir jsonData a cadena JSON y enviar
     });
-}
+};

@@ -535,9 +535,18 @@ footer {
     }
 
     .footer-content p {
-        font-size: 0.6rem;
+        font-size: 0.6rem;      
     }
 
+    .footer-content .right {
+
+        width:  90%;
+    }
+
+    .footer-content .left {
+
+        width:  90%;
+    }
     .footer-content {
         align-items: center;
     }

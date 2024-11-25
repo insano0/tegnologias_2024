@@ -28,6 +28,7 @@ header {
     color: white;
     position: fixed;
     z-index: 9999;
+    
    
 }
 
@@ -285,8 +286,8 @@ section img{
 }
 
 .carousel {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 185px;
+    margin-right: 185px;
     padding-left: 15px;
     padding-right: 15px;
     display:fit-content;
@@ -628,6 +629,28 @@ h1 a:hover {
 /* Responsive design */
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+    .carousel {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 70px;
+
+        
+        padding-left: 0px;
+        padding-right: 0px;
+        display:fit-content;
+        align-content: center;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        
+        
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 0 100px rgb(0, 0, 0);
+        position: relative;
+    }
+
     header .contenedor {
         flex-direction: column;
         gap: 10px;
@@ -711,6 +734,10 @@ h1 a:hover {
         }
     }
     @media (max-width: 480px) {
+        header .contenedor {
+            
+            height: 207px;
+        }
 
         header nav ul li a {
             font-size: 0.6rem;
@@ -746,8 +773,8 @@ h1 a:hover {
 
 
 @keyframes slide {
-    0% { transform: translateX(100%); }
+    0% { transform: translateX(95%); }
     33% { transform: translateX(0); }
-    66% { transform: translateX(-100%);}
-    100% { transform: translateX(100%);}
+    66% { transform: translateX(-95%);}
+    100% { transform: translateX(95%);}
 }

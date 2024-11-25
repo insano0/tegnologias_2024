@@ -17,39 +17,38 @@ body {
     margin: 0%;
     
 }
-
 /* Header styles............................................................................................... */
 header {
     display: flex;
-    position: fixed;
-    top: 0;          
-    left: 0;          
-    right: 0; 
-    justify-content: space-between;
-    align-items: center;
-    background-color: #14a45c;
-    padding: 10px 20px;
-    color: white;
-    width: 100vw;
-    z-index: 9999;
+    flex-direction: row;             /* Organizar todos */
+    justify-content: space-between;  /* Centrar */
+    align-items: center;             /* Alinear */
+    background-image: linear-gradient(to bottom, #048f49, #3dd380);
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100px;
+    top: 0;
+
 }
 
-
 img {
-    
 
     max-width: 100%;
 
 }
 header .LOGO img {
-    height: 50px;
+    height: 100px;
+    width: auto;
 }
 
 
 header .contenedor {
     display: flex;
+    max-width: 80%;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 
@@ -59,22 +58,103 @@ header nav ul {
     gap: 20px;
 }
 
-header nav ul li {
+nav ul li {
+    list-style-type: none;
+    background-color: #323741;
+    padding: 10px 25px; 
+    border-radius: 10px;
+    overflow: visible;
     position: relative;
+    width: 210px; 
+    height: 50px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    font-size: 20px;
+    text-align: center; 
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #323741;
+    border-radius: 10px;
+    list-style-type: none;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 5px 0;
 }
 
 header nav ul li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
+    position: relative;
 }
 
 header .Perfil img {
-    height: 40px;
+    height: 80px;
     border-radius: 50%;
 }
 
 
+
+
+/* Estilo para el contenedor del nombre de usuario */
+.username-display h1 {
+    font-family: 'Arial', sans-serif; /* Tipo de letra */
+    font-size: rem; /* Tamaño de la fuente */
+    font-weight: 600; /* Grosor de la fuente */
+    color: #25ffd3; /* Color del texto */
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase; /* Hacer el texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave en el texto */
+    text-align: center; /* Alineación centrada */
+    transition: all 0.3s ease; /* Efecto suave al cambiar de estilo */
+}
+
+/* Efecto hover para el nombre de usuario */
+.username-display h1:hover {
+    color: #79ccf3; /* Cambio de color al pasar el mouse */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el mouse */
+    transform: scale(1.05); /* Agrandar ligeramente el texto */
+}
+
+img {
+
+    max-width: 100%;
+
+}
+
+.LOGO{
+    
+    max-width: 15rem;
+    align-items: center;
+}
+
+
+.contenedor{
+
+    display: flex;
+    max-width: 80%; 
+    justify-content:space-between ; 
+    align-items: center;
+    gap: 25px;
+}
 
 /* Slider*/
 .Slider {
@@ -93,14 +173,6 @@ header .Perfil img {
     height: 70%;
     color: white; /* Para que el texto sea visible sobre la imagen */
 }
-
-
-.sliderC h1 {
-    font-size: clamp(48px, 5vw, 86px); /* Ajuste fluido de tamaño de fuente */
-  }
-.sliderC p {
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
-  }
 .slider1 {
     
     height: 200px; 
@@ -117,7 +189,52 @@ header .Perfil img {
 
 
 
+nav{
 
+    align-self: left;
+
+}
+nav ul {
+
+    gap: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative; /* Posicionar elemento */
+}
+
+nav ul li {
+    
+    list-style-type: none;
+    background-color: #323741;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    overflow: visible;
+    position: relative;
+    
+}
+
+nav ul li a {
+    color: #f4f4f4;
+    font-size: 24px;
+
+    
+}
+
+
+a{
+    text-decoration: none;
+    
+}
+  
+  
+a:hover {                                           /* Estilo cuando el cursor pasa sobre el elemento */
+    text-decoration: underline;
+    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
+}
 
 .Perfil{
     
@@ -126,6 +243,8 @@ header .Perfil img {
     border-radius: 100%;
     overflow: hidden;
 }
+
+
 
 /* Menu Desplegable............................................................................................... */
 
@@ -614,6 +733,9 @@ th, td {
 .hidden {
     display: none;
 }
+
+
+
 /* Responsive design */
 @media (max-width: 768px) {
     nav ul {
@@ -625,9 +747,9 @@ th, td {
         margin-bottom: 10px;
     }
 
-    main {
-        margin-top: 200px;
-    }   
+    .inicio{
+        width: 20 px;
+    }
 
     .contacto-contenido {
         flex-direction: column;
@@ -668,21 +790,24 @@ th, td {
     .registro-section .input-registro {
         width: 90%;
     }
+    .agenda-section{
+        display: none;
+    }
+
+   .contenedor{
+    display: none;
+   }
 }
 
+
+
 @media (max-width: 480px) {
-    header nav ul li a {
-        font-size: 0.9rem;
-    }
-
-    .registro-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .registro-section .btn-confirmar {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
+    
+.dropdown{
+            display: none }
+}
+.inicio{
+    width: 20 px;
 }
 @media (min-width: 768px){
     .TablaClase2{
@@ -692,8 +817,17 @@ th, td {
         display: none;
     }
 }
-@media (max-width: 768px){
-    .agenda-section{
+
+
+
+
+/* Ocultar en pantallas menores a 768px (tabletas y móviles) */
+@media (max-width: 768px) {
+    .Perfil {
+        display: none;
+    }
+    
+    .contacto {
         display: none;
     }
 }

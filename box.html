@@ -6,6 +6,13 @@
     <title>Mi Página Web con Menú</title>
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="box.css">
+    <script>
+        function toggleDropdown(event) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+        const dropdown = event.currentTarget.parentElement;
+        dropdown.classList.toggle('active');
+        }
+    </script> 
 </head>
 <body>
     <header>
@@ -29,7 +36,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="box.html">BOXEO</a></li>
                             <li><a href="Aerobicos.html">AEROBICOS</a></li>
-                            <li><a href="pesas.html">PESAS</a></li>
+                            <li><a href="Pesas.html">PESAS</a></li>
                         </ul>
                     </li>                    
                 </ul>

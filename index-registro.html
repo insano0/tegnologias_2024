@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Web con Menú</title>
     <link rel="stylesheet" href="styles-registro.css">
+
+    <script>
+        function toggleDropdown(event) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+        const dropdown = event.currentTarget.parentElement;
+        dropdown.classList.toggle('active');
+        }
+       </script>
 </head>
 <body>
     <header>

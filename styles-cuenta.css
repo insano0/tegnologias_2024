@@ -534,6 +534,14 @@ footer {
         
     }
 
+    .footer-content p {
+        font-size: 0.6rem;
+    }
+
+    .footer-content {
+        align-items: center;
+    }
+
     .registro-section .input-registro {
         width: 90%;
     }

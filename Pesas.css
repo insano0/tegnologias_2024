@@ -18,24 +18,35 @@ body {
 
 /* Header styles............................................................................................... */
 header {
+    top: 0px;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(to bottom, #29048f ,#5d3dd3);
+    background-image: linear-gradient(to bottom, #56387e, #311d4d);
     padding: 10px 20px;
     color: white;
     position: fixed;
+    z-index: 9999;
+    
+   
 }
 
 img {
 
-    max-width: 100%;
+    width: 100%;
 
+}
+.imagen-fondo{
+    margin-top: 126px;
+    max-height: 700px;
 }
 header .LOGO img {
     height: 100px;
     width: auto;
+}
+.Perfil img{
+    height: 0px;
 }
 
 
@@ -101,14 +112,10 @@ header nav ul li a {
 }
 
 header .Perfil img {
-    height: 80px;
+    height: auto;
     border-radius: 50%;
 }
-
-
-
-
-/* Slider*/
+/*Slider*/
 .Slider {
     display: flex;
     max-width: 60%; 
@@ -121,35 +128,75 @@ header .Perfil img {
 .sliderC {
     background-image: url('pesas_f.webp');
     background-size: cover;
-    background-position: center;
-    height: 70%;
+    background-position: top;
+    align-items: center;
+    text-align: center;
+    height: 500px;
     color: white; /* Para que el texto sea visible sobre la imagen */
 }
-
-
 .sliderC h1 {
-    font-size: clamp(48px, 5vw, 86px); /* Ajuste fluido de tamaño de fuente */
+    padding-top: 10px;
+    font-size: clamp(24px, 5vw, 62px); /* Ajuste fluido de tamaño de fuente */
   }
 .sliderC p {
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
+    font-size: clamp(24px, 5vw, 32px); /* Ajuste fluido de tamaño de fuente */
   }
 .slider1 {
     
-    height: 200px; 
+    height: 350px; 
     overflow-y: scroll;
-    
-    padding: 10px;
+    width: 50%;
+    margin-left: 25%;
     background-color: rgba(0, 0, 0, 0.5);/* Color de fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .slider1 h3 {
+    font-size: clamp(8px, 5vw, 32px);
     margin: 5px 0; /* Espacio entre los elementos h3 */
 }
 
 
+nav{
+
+    align-self: left;
+
+}
+nav ul {
+
+    gap: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative; /* Posicionar elemento */
+}
+
+nav ul li {
+    
+    list-style-type: none;
+    background-color: #323741;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    overflow: visible;
+    position: relative;
+    
+}
 
 
+
+a{
+    text-decoration: none;
+    
+}
+  
+  
+a:hover {                                           /* Estilo cuando el cursor pasa sobre el elemento */
+    text-decoration: underline;
+    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
+}
 
 .Perfil{
     
@@ -161,6 +208,22 @@ header .Perfil img {
 
 /* Menu Desplegable............................................................................................... */
 
+.dropdown {
+    position: relative;
+    display: flex;
+}
+
+.dropdown-menu {
+    
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    justify-self: center;
+    max-width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 500;
+    margin-top: 10px;
+}
 header nav ul li .dropdown-menu {
     display: none;
     position: absolute;
@@ -170,11 +233,46 @@ header nav ul li .dropdown-menu {
     border-radius: 5px;
     top: 100%;
 }
-
 header nav ul li:hover .dropdown-menu {
     display: block;
 }
 
+.dropdown-menu li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a {
+    
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    
+}
+
+
+.dropdown:hover .dropdown-menu {
+    background : #323741;
+    padding: 5px;
+    display: block; /* Cambiado a block */
+    position: absolute;
+}
+
+.dropdown a:hover{
+                   
+    justify-self: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
+    
+}
+.arrow {
+    margin-left: 8px;
+}
 
 /* Main content styles ...............................................................................................*/
 
@@ -182,53 +280,52 @@ main {
 
     display: block;
     align-items: center;             /* Alinear */
-    background-color: #5d3dd3;
+    background-color: #56387e;
     
 }
 
 
 .inicio{
-    display: flex;
-    justify-items: center;
+    display: block; 
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    background-color: #5d3dd3;
-   
+    background-color: #100a5d;
+    height: 800px; /* Añadido para ocupar toda la altura de la ventana */
 }
-
 
 section img{
     position: center;
     width: 100%;
-    height: 860px;
+    height: 900px;
 }
 
-.TituloInicio {
-    position: absolute; /* Posiciona el texto encima de la imagen */
-    bottom: 15%; /* Centra el texto verticalmente */
-    left: 50%; /* Centra el texto horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
-    color: white; /* Cambia el color del texto para que sea visible sobre la imagen */
-    text-align: center; /* Centra el texto dentro del contenedor */
-    font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mayor legibilidad (opcional) */
-    padding: 10px; /* Espacio interno alrededor del texto */
-    border-radius: 5px; /* Bordes redondeados (opcional) */
+.TituloInicio{
     
+    position: absolute;
+    top:50%;
+    left: 10px;
+    bottom: 0;    
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);  /* Fondo transparente */    
+    border-radius: 5px;
+    margin-left: 10px;
+}      
+.TituloInicio h1{
+    font-size: 80px;
+    text-align: left;
+    justify-content: center;
+   
+}
+.TituloInicio h2{
+    font-size: 40px;
+    text-align: left;
+    justify-content: center;
     
-  } 
-  .TituloInicio h1 {
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
-  } 
-.imagen-inicio {
-    position: center; /* Hace que los elementos posicionados dentro se ajusten a este contenedor */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-  }
-  .imagen-fondo {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-    height: 100%; /* Mantiene la proporción de la imagen */
-  }
+}
+
+
 .Frase {
+    
     justify-content: center;
     align-items: center;
     width: fit-content;
@@ -242,7 +339,7 @@ section img{
     align-items: center;
     padding: 15px;
 
-    background-image: radial-gradient(circle, #332175 ,#3716b0);
+    background-image: radial-gradient(circle, #56387e ,#311d4d);
     height: fit-content;
     width: fit-content;
     top: 80%;        
@@ -250,15 +347,20 @@ section img{
     text-align-last: center; /* Centra la última línea del texto */
     text-justify: inter-word;           
 }
+.FraseMotivacional h1{
+    font-size: 60px;
+    text-align: center;
+    justify-content: center;
+    
+}
+.FraseMotivacional h2{
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    
+}
 
-.FraseMotivacional h1 {
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
-  }  
-.FraseMotivacional h2 {
-    font-size: clamp(14px, 5vw, 24px); /* Ajuste fluido de tamaño de fuente */
-  } 
-
-  .arrow-down {
+.arrow-down {
     align-items: center;
     justify-content: center;
     max-width: 100px;
@@ -267,15 +369,6 @@ section img{
     border-top: 100px solid rgb(255, 255, 255);
 }
 
-.Deportes {
-    
-    width: 800px;
-    display: flex;
-    align-content: center;
-    justify-self: center;
-    flex-direction: row;
-    
-}
 
 
 /* Seccion de Agenda */
@@ -296,7 +389,7 @@ section img{
 
 .carousel-wrapper {
     overflow: hidden;
-    width: 80%;
+    width: 100vw;
     display: flex;
 }
 
@@ -310,8 +403,8 @@ section img{
 .carousel-list li {
     flex: 0 0 100px;
     text-align: center;
-    background-color: #5d3dd3;
-    color: 3dd380;
+    background-color: #2e2e3e;
+    color: white;
     border-radius: 5px;
     padding: 10px;
     margin: 0 10px;
@@ -331,7 +424,7 @@ section img{
 }
 
 .carousel-btn:hover {
-    color: #5d3dd3;
+    color: #f0f0f0;
 }
 
 .agenda-grid {
@@ -347,7 +440,7 @@ section img{
     font-weight: bold;
     text-align: center;
     padding: 10px;
-    background-color: #5d3dd3;
+    background-color: #2e2e3e;
     border-radius: 5px;
 }
 
@@ -411,36 +504,31 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .Iniciodesesion2 {
     position: relative;
     width: 100%;
     height: 100%;
-    
 }
 
 .Iniciodesesion2 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
 }
 
 .CUADROINICIOSESION {
     
-    
     position: absolute;
     top: 50%;
-    
+    left: 15%;
     transform: translateY(-50%);
-    background-color: #5d3dd3;
+    background-color: #56387e;
     padding: 90px;
     border-radius: 10px;
-    box-shadow: 0 0 70px rgb(28, 10, 126);
-    height: auto;
-    width: 100vw;
+    box-shadow: 0 0 70px  #311d4d;
+    width: 50vw;
 }
 
 .CUADROINICIOSESION2 {
@@ -448,7 +536,6 @@ p {
     display: flex;
     flex-direction: column;
     text-align: center;
-    
 }
 
 .CUADROINICIOSESION2 h1 {
@@ -474,12 +561,15 @@ p {
     border-radius: 5px;
     width: 100%;
 }
+.CUADROINICIOSESION2 a{
+    color: #1b0e2c;
+}
 
 .CUADROINICIOSESION2 button {
     padding: 10px;
     font-size: 18px;
     font-style: bold;
-    background-color: #4931a0;
+    background-color: #311d4d;
     color: white;
     border: none;
     border-radius: 5px;
@@ -487,7 +577,7 @@ p {
 }
 
 .CUADROINICIOSESION2 button:hover {
-    background-color: #5d3dd3;
+    background-color: #100a5d;
 }
 
 .inicio2{
@@ -502,9 +592,6 @@ p {
     width: 250px;
     color: #2e2e3e;
     font-weight: bold;
-}
-.CUADROINICIOSESION2 a {
-   color: rgb(53, 45, 97);
 }
 
 /* Services list styles */
@@ -526,212 +613,205 @@ p {
     width: 1em;
     margin-left: -1em;
 }
-/* Sección de formulario de agregar clases */
-
-
-.agenda-formulario h1 {
-    margin-bottom: 20px;
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
-    text-align: center; /* Centrar el texto */
-}
-
-form {
-    background-color: #8565fa;
-    padding: 20px;
-    border: 1px solid #301c7a;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-}
-
-label {
-    margin-right: 10px;
-}
-
-input, select, button {
-    padding: 10px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #252535;
-}
-
-button {
-    background-color: #575777;
-    color: white; 
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #404069;
-}
-
-.error {
-    color: red;
-    display: none;
-    width: 100%;
-}
-
-.TablaClase2 {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: max-content;
-    border-collapse: collapse;
-    margin: auto;
-    color: #000;
-}
-table {
-    
-    width: max-content;
-    padding: center;
-    height: max-content;
-    border-collapse: collapse;
-    text-align: center;
-    margin: auto;
-    
-    
-}
-
-table, th, td {
-    border: 1px solid black;
-    
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-}
-
-.hidden {
-    display: none;
-}
-
 /* Seccion de Ayuda */
 footer {
-    background-color: #2b186f;
+    background-color: #56387e;
+    padding: 20px 0;
     color: white;
-    padding: 20px;
-    text-align: center;
 }
 
-footer .footer-content {
-    display: block;
+.footer-content {
+    display: flex;
     justify-content: space-between;
-    gap: 20px;
+    padding: 0 20px;
 }
 
-
-footer .footer-content .right {
-    text-align: left;
-}
-
-.contacto-imagen {
-    display: none;
-    width: 30%; /* Tamaño original */
-    transition: transform 0.3s ease; /* Transición suave */
+.footer-content .contacto-imagen {
     
+    width: 200px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
 }
 
-
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
 .footer-content p{
-    margin-bottom: 10px;
     font-size: 20px;
-}  
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    nav ul li {
-        margin-bottom: 10px;
-    }
+    .carousel {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 70px;
 
-    main {
-        margin-top: 200px;
-    }   
-
-    .contacto-contenido {
-        flex-direction: column;
-        position: static; /* Restablece el comportamiento en pantallas pequeñas */
+        
+        padding-left: 0px;
+        padding-right: 0px;
+        display:fit-content;
+        align-content: center;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        
+        
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 0 100px rgb(0, 0, 0);
+        position: relative;
     }
-
-    .contacto-derecha, .contacto-izquierda, .contacto-imagen {
-        width: 100%;
-    }
-
-    .contacto-imagen {
-        position: static; /* Hace que la imagen sea centrada en el flujo natural */
-        transform: none; /* Elimina la transformación */
-    }
-    footer .footer-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .contacto-imagen{
-        display: none;
-        }
 
     header .contenedor {
         flex-direction: column;
         gap: 10px;
+        height: 257px;
     }
 
     header nav ul {
         flex-direction: column;
         gap: 10px;
     }
+    
 
     footer .footer-content {
         flex-direction: column;
         gap: 10px;
+        
+    }
+
+    .footer-content p {
+        font-size: 0.6rem;      
+    }
+
+    .footer-content .right {
+
+        width:  90%;
+    }
+
+    .footer-content .left {
+
+        width:  90%;
+    }
+    .footer-content {
+        align-items: center;
     }
 
     .registro-section .input-registro {
         width: 90%;
-    }   
+    }
+
+    
+    .perfil-section {
+    
+        text-align: center;
+        padding-top : 200px;
+    }
+
+    .Perfil img{
+
+        scale: 0.8;
+    }
+    .CUADROINICIOSESION {    
+        left: 10%;
+        width: 80vw;
+        padding: 15%;
+    }
+    .TituloInicio h1{
+        font-size: 40px;
+        
+        
+    }
+    .TituloInicio h2{
+        font-size: 20px;
+        padding-bottom: 0px;
+        
+    }
+    .FraseMotivacional h1{
+        font-size: 40px;
+        
+        
+    }
+    .FraseMotivacional h2{
+        font-size: 20px;
+        padding-bottom: 0px;
+        
+    }
+    .sliderC {
+       
+        height: 400px;
+        
+    }
+    .slider1 {
+    
+        height: 300px; 
+       
+    }
+    
 }
-
-@media (max-width: 480px) {
-    header nav ul li a {
-        font-size: 0.9rem;
+    @media (max-width: 768px){
+        .agenda-section{
+            display: none;
+        }
     }
+    @media (max-width: 480px) {
+        header .contenedor {
+            
+            height: 207px;
+        }
 
-    .registro-section h2 {
-        font-size: 1.5rem;
+        header nav ul li a {
+            font-size: 0.6rem;
+        }
+    
+        header nav ul li{
+    
+            width: 100px;
+            height: 30px;
+        }
+        header .LOGO img{
+    
+            height: 50px;
+    
+        }
+    
+        .registro-section h2 {
+            font-size: 1.5rem;
+        }
+    
+        .registro-section .btn-confirmar {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+    
+        .footer-content .contacto-imagen {
+    
+            width: 200px; /* Tamaño original */
+            transition: transform 0.3s ease; /* Transición suave */
+        }
+        .sliderC {
+       
+            height: 300px;
+            
+        }
+        .slider1 {
+    
+            height: 200px; 
+           
+        }
+        
     }
-
-    .registro-section .btn-confirmar {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
-@media (min-width: 768px){
-    .TablaClase2{
-        display: none;
-    }
-    .agenda-formulario{
-        display: none;
-    }
-}
-@media (max-width: 768px){
-    .agenda-section{
-        display: none;
-    }
-}
-
-
-
 @keyframes slide {
     0% { transform: translateX(0%); }
     10% { transform: translateX(33%); }
@@ -739,7 +819,3 @@ footer .footer-content .right {
     66% { transform: translateX(-20%); }
     100% { transform: translateX(0%); }
 }
-
-
-
-

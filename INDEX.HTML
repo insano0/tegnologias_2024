@@ -18,7 +18,13 @@
         <div class="contenedor">
             <nav>
                 <ul>
-                    <li><a href="#Ayuda">AYUDA</a></li>
+                    <li><a href="#contacto" class="btn">AYUDA</a></li>                    
+                    <li><a href="#Agenda" class="btn">AGENDA</a></li>
+                    <style>
+                        #Agenda {
+                          scroll-margin-top: 127px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
+                        }
+                      </style>
                     <li class="dropdown">
                         <a href="#Deportes" onclick="toggleDropdown(event)">DEPORTES <span class="arrow">&#9662;</span></a>
                         <script>
@@ -34,7 +40,7 @@
                             <li><a href="Pesas.html">PESAS</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Agenda">AGENDA</a></li>
+                    
                 </ul>
             </nav>
             
@@ -89,7 +95,7 @@
                 <button class="btn-sobre-carrusel">Click para ver mas</button>
             </div>
         </section>
-        <section class="agenda-section">
+        <section id="Agenda"class="agenda-section">
             <h2>Agenda</h2>
 
                 <!-- Meses -->
@@ -232,13 +238,15 @@
         </section>
         <!-- Sección de Ayuda -->
         <footer>
-            <div class="footer-content">
+            <div id="contacto"class="footer-content">
                 <div class="left">
                     <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
                     Puedes acercarte a nuestros canales de comunicación.</p>
                 </div>
-                <div class="contacto-imagen">
-                    <img src="logo.png" alt="Imagen de contacto">
+                <div class="LOGO">
+                    <a href="INDEX.HTML">
+                        <img src="logo.png" alt="Logo">
+                    </a>
                 </div>
                 <div class="right">
                     <p>Nos encuentras en nuestras redes sociales como:</p>

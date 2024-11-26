@@ -7,13 +7,6 @@
     <title>Mi Página Web con Menú</title>
     <link rel="stylesheet" href="styles-cuenta.css">
     
-    <script>
-        function toggleDropdown(event) {
-        event.preventDefault(); // Previene el comportamiento por defecto del enlace
-        const dropdown = event.currentTarget.parentElement;
-        dropdown.classList.toggle('active');
-        }
-       </script>
        
 </head>
 <body>
@@ -34,7 +27,14 @@
                         }
                       </style>
                     <li class="dropdown">
-                        <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <a href="#Deportes" onclick="toggleDropdown(event)">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <script>
+                            function toggleDropdown(event) {
+                            event.preventDefault(); // Previene el comportamiento por defecto del enlace
+                            const dropdown = event.currentTarget.parentElement;
+                            dropdown.classList.toggle('active');
+                            }
+                           </script>                   
                         <ul class="dropdown-menu">
                             <li><a href="box-Usuarios.html">BOXEO</a></li>
                             <li><a href="Aerobicos-Usuarios.html">AEROBICOS</a></li>
@@ -266,22 +266,23 @@
             <div class="payment-grid">
                 <!-- Próximos Pagos -->
                 <div class="payment-column">
-                    <h3>Próximos Pagos</h3>
-                    <div class="payment-item">
-                        <span>Mensualidad</span>
-                        <span>30-10-2024</span>
-                        <span>$XX.XXX</span>
+                    <h3>Próximos Pagos</h3>               
+                        <div class="payment-item">
+                            <span>Mensualidad</span>
+                            <span>30-10-2024</span>
+                            <span>$XX.XXX</span>
+                        </div>
+                        <div class="payment-item">
+                            <span>Clase Box</span>
+                            <span>25-10-2024</span>
+                            <span>$XX.XXX</span>
+                        </div>
+                        <div class="payment-item">
+                            <span>Mensualidad</span>
+                            <span>30-11-2024</span>
+                            <span>$XX.XXX</span>
                     </div>
-                    <div class="payment-item">
-                        <span>Clase Box</span>
-                        <span>25-10-2024</span>
-                        <span>$XX.XXX</span>
-                    </div>
-                    <div class="payment-item">
-                        <span>Mensualidad</span>
-                        <span>30-11-2024</span>
-                        <span>$XX.XXX</span>
-                    </div>
+                    
                 </div>
         
                 <!-- Pagos Realizados -->

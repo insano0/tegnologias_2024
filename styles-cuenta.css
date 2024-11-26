@@ -319,8 +319,7 @@ header nav ul li:hover .dropdown-menu {
     grid-template-columns: 1fr 1fr 1fr; 
     width: 80%;
     gap: 0px;
-    margin-top: 20px;
-    margin-left: 10vw;
+    align-items: center;
 }
 
 .proximosPagos {
@@ -350,6 +349,9 @@ header nav ul li:hover .dropdown-menu {
     flex-direction: row;
     }
 
+.proximosPagos2 {
+    justify-content: space-around;
+}       
 
 .payment-item {
     display: flex;    

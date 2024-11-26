@@ -572,6 +572,10 @@ footer {
     justify-content: center;
     margin-bottom: 0;
 }
+footer .LOGO img {
+    height: 100px;
+    width: auto;
+}
 
 
 /* AJUSTES DE TEXTO! */
@@ -749,6 +753,11 @@ h1 a:hover {
             height: 30px;
         }
         header .LOGO img{
+    
+            height: 50px;
+    
+        }
+        footer .LOGO img{
     
             height: 50px;
     

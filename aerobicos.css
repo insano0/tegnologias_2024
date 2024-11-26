@@ -5,7 +5,6 @@
 }
 
 body {
-    
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
@@ -13,23 +12,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 0%;
-    
+    height: 100vh;
+    margin: 0;
 }
+
 /* Header styles............................................................................................... */
 header {
+    top: 0px;
     display: flex;
-    flex-direction: row;             /* Organizar todos */
-    justify-content: space-between;  /* Centrar */
-    align-items: center;             /* Alinear */
-    background-image: linear-gradient(to bottom, #048f49, #3dd380);
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100%;
-    height: 100px;
-    top: 0;
-
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #3dd380, #048f49);
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    z-index: 9999;
+    
+   
 }
 
 img {
@@ -65,7 +65,7 @@ nav ul li {
     border-radius: 10px;
     overflow: visible;
     position: relative;
-    width: 210px; 
+    width: 200px; 
     height: 50px;
     display: flex;
     align-items: center; 
@@ -110,53 +110,8 @@ header .Perfil img {
 }
 
 
-
-
-/* Estilo para el contenedor del nombre de usuario */
-.username-display h1 {
-    font-family: 'Arial', sans-serif; /* Tipo de letra */
-    font-size: rem; /* Tamaño de la fuente */
-    font-weight: 600; /* Grosor de la fuente */
-    color: #25ffd3; /* Color del texto */
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase; /* Hacer el texto en mayúsculas */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave en el texto */
-    text-align: center; /* Alineación centrada */
-    transition: all 0.3s ease; /* Efecto suave al cambiar de estilo */
-}
-
-/* Efecto hover para el nombre de usuario */
-.username-display h1:hover {
-    color: #79ccf3; /* Cambio de color al pasar el mouse */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el mouse */
-    transform: scale(1.05); /* Agrandar ligeramente el texto */
-}
-
-img {
-
-    max-width: 100%;
-
-}
-
-.LOGO{
-    
-    max-width: 15rem;
-    align-items: center;
-}
-
-
-.contenedor{
-
-    display: flex;
-    max-width: 80%; 
-    justify-content:space-between ; 
-    align-items: center;
-    gap: 25px;
-}
-
-/* Slider*/
+/* Menu Desplegable............................................................................................... */
+/Slider/
 .Slider {
     display: flex;
     max-width: 60%; 
@@ -169,85 +124,50 @@ img {
 .sliderC {
     background-image: url('aerobicos_2.webp');
     background-size: cover;
-    background-position: center;
-    height: 70%;
+    background-position: top;
+    align-items: center;
+    text-align: center;
+    height: 500px;
     color: white; /* Para que el texto sea visible sobre la imagen */
 }
+.sliderC h1 {
+    padding-top: 10px;
+    font-size: clamp(24px, 5vw, 62px); /* Ajuste fluido de tamaño de fuente */
+  }
+.sliderC p {
+    font-size: clamp(24px, 5vw, 32px); /* Ajuste fluido de tamaño de fuente */
+
+  }
 .slider1 {
     
-    height: 200px; 
+    height: 350px; 
     overflow-y: scroll;
-    
-    padding: 10px;
+    width: 50%;
+    margin-left: 25%;
     background-color: rgba(0, 0, 0, 0.5);/* Color de fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .slider1 h3 {
-    margin: 5px 0; /* Espacio entre los elementos h3 */
+    font-size: clamp(8px, 5vw, 32px);
+    margin: 5px 0; /* Espacio entre los elementos h3 */
 }
-
-
-
-nav{
-
-    align-self: left;
-
-}
-nav ul {
-
-    gap: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative; /* Posicionar elemento */
-}
-
-nav ul li {
-    
-    list-style-type: none;
-    background-color: #323741;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 10px;
-    overflow: visible;
+.dropdown {
     position: relative;
+    display: flex;
+}
+
+.dropdown-menu {
     
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    justify-self: center;
+    max-width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 500;
+    margin-top: 10px;
 }
-
-nav ul li a {
-    color: #f4f4f4;
-    font-size: 24px;
-
-    
-}
-
-
-a{
-    text-decoration: none;
-    
-}
-  
-  
-a:hover {                                           /* Estilo cuando el cursor pasa sobre el elemento */
-    text-decoration: underline;
-    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
-}
-
-.Perfil{
-    
-    max-width: 4.5rem;
-    max-height: 4.5rem;
-    border-radius: 100%;
-    overflow: hidden;
-}
-
-
-
-/* Menu Desplegable............................................................................................... */
-
 header nav ul li .dropdown-menu {
     display: none;
     position: absolute;
@@ -257,9 +177,45 @@ header nav ul li .dropdown-menu {
     border-radius: 5px;
     top: 100%;
 }
-
 header nav ul li:hover .dropdown-menu {
     display: block;
+}
+
+.dropdown-menu li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a {
+    
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    
+}
+
+
+.dropdown:hover .dropdown-menu {
+    background : #323741;
+    padding: 5px;
+    display: block; /* Cambiado a block */
+    position: absolute;
+}
+
+.dropdown a:hover{
+                   
+    justify-self: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(211, 211, 216);                  /* Color del subrayado */
+    
+}
+.arrow {
+    margin-left: 8px;
 }
 
 /* Main content styles ...............................................................................................*/
@@ -274,47 +230,46 @@ main {
 
 
 .inicio{
-    display: flex;
-    justify-items: center;
+    display: block; 
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    background-color: #3dd380;
-   
+    background-color: #02522a;
+    height: 100vh; /* Añadido para ocupar toda la altura de la ventana */
 }
-
 
 section img{
     position: center;
     width: 100%;
-    height: 860px;
+    height: 900px;
 }
 
-.TituloInicio {
-    position: absolute; /* Posiciona el texto encima de la imagen */
-    bottom: 15%; /* Centra el texto verticalmente */
-    left: 50%; /* Centra el texto horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
-    color: white; /* Cambia el color del texto para que sea visible sobre la imagen */
-    text-align: center; /* Centra el texto dentro del contenedor */
-    font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mayor legibilidad (opcional) */
-    padding: 10px; /* Espacio interno alrededor del texto */
-    border-radius: 5px; /* Bordes redondeados (opcional) */
+.TituloInicio{
     
+    position: absolute;
+    top:50%;
+    left: 10px;
+    bottom: 0;    
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);  /* Fondo transparente */    
+    border-radius: 5px;
+    margin-left: 10px;
+}      
+.TituloInicio h1{
+    font-size: 80px;
+    text-align: left;
+    justify-content: center;
+   
+}
+.TituloInicio h2{
+    font-size: 40px;
+    text-align: left;
+    justify-content: center;
     
-  } 
-  .TituloInicio h1 {
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
-  } 
-.imagen-inicio {
-    position: center; /* Hace que los elementos posicionados dentro se ajusten a este contenedor */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-  }
-  .imagen-fondo {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-    height: 100%; /* Mantiene la proporción de la imagen */
-  }
+}
+
+
 .Frase {
+    
     justify-content: center;
     align-items: center;
     width: fit-content;
@@ -328,7 +283,7 @@ section img{
     align-items: center;
     padding: 15px;
 
-    background-image: radial-gradient(circle, #048f49 ,#3dd380);
+    background-image: radial-gradient(circle,#048f49, #3dd380);
     height: fit-content;
     width: fit-content;
     top: 80%;        
@@ -336,15 +291,20 @@ section img{
     text-align-last: center; /* Centra la última línea del texto */
     text-justify: inter-word;           
 }
+.FraseMotivacional h1{
+    font-size: 60px;
+    text-align: center;
+    justify-content: center;
+    
+}
+.FraseMotivacional h2{
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    
+}
 
-.FraseMotivacional h1 {
-    font-size: clamp(24px, 5vw, 48px); /* Ajuste fluido de tamaño de fuente */
-  }  
-.FraseMotivacional h2 {
-    font-size: clamp(14px, 5vw, 24px); /* Ajuste fluido de tamaño de fuente */
-  } 
-
-  .arrow-down {
+.arrow-down {
     align-items: center;
     justify-content: center;
     max-width: 100px;
@@ -353,121 +313,73 @@ section img{
     border-top: 100px solid rgb(255, 255, 255);
 }
 
+/* Seccion de Carrusel */
+
 .Deportes {
     
-    width: 800px;
+    width: 850px;
     display: flex;
     align-content: center;
     justify-self: center;
     flex-direction: row;
     
 }
-/* Seccion de Inicio de Sesion */
 
-.iniciodesesion {
+.carousel {
+    margin-left: 185px;
+    margin-right: 185px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display:fit-content;
+    align-content: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    
+    
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgb(0, 0, 0);
     position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
+}
+
+.slides {
     justify-content: center;
     align-items: center;
-
+    display: flex;
+    width: 100%; /* 100% por cada slide */
+    animation: slide 12s infinite;
 }
 
-.Iniciodesesion2 {
-    position: relative;
+.slide {
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    
+    flex-shrink: 0;
 }
 
-.Iniciodesesion2 img {
+.slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
+    height: 800px;
+    display: block;
 }
 
-.CUADROINICIOSESION {
-    
-    
+.btn-sobre-carrusel {
     position: absolute;
-    top: 50%;
-    
-    transform: translateY(-50%);
-    background-color: #048f49;
-    padding: 90px;
-    border-radius: 10px;
-    box-shadow: 0 0 70px #02522a;
-    height: auto;
-    width: 100vw;
-}
-
-.CUADROINICIOSESION2 {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    
-}
-
-.CUADROINICIOSESION2 h1 {
-    font-size: 24px;
-    color: #ffffff;
-}       
-
-.CUADROINICIOSESION2 form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.CUADROINICIOSESION2 label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.CUADROINICIOSESION2 input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.CUADROINICIOSESION2 button {
-    padding: 10px;
-    font-size: 18px;
-    font-style: bold;
+    top: 750px; /* Ajusta según sea necesario */
+    right: 20px; /* Ajusta según sea necesario */
+    padding: 10px 20px;
     background-color: #02522a;
-    color: white;
+    color: rgb(206, 206, 206);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
-.CUADROINICIOSESION2 button:hover {
-    background-color: #0A545D;
+.btn-sobre-carrusel:hover {
+    background-color: #02522a;
 }
-
-.inicio2{
-    font-size: 30px;
-    font-family: inika;
-    color: #ffffff;
-}
-
-.input-registro {
-    padding: 10px;
-    font-size: 16px;
-    width: 250px;
-    color: #2e2e3e;
-    font-weight: bold;
-}
-.CUADROINICIOSESION2 a {
-   color: #02522a;
-}
-
-
 
 /* Seccion de Agenda */
 .agenda-section {
@@ -482,12 +394,13 @@ section img{
 .month-carousel {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 20px;    
 }
 
 .carousel-wrapper {
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     display: flex;
 }
 
@@ -501,8 +414,8 @@ section img{
 .carousel-list li {
     flex: 0 0 100px;
     text-align: center;
-    background-color: #3dd380;
-    color: 3dd380;
+    background-color: #2e2e3e;
+    color: white;
     border-radius: 5px;
     padding: 10px;
     margin: 0 10px;
@@ -522,7 +435,7 @@ section img{
 }
 
 .carousel-btn:hover {
-    color: #3dd380;
+    color: #f0f0f0;
 }
 
 .agenda-grid {
@@ -538,7 +451,7 @@ section img{
     font-weight: bold;
     text-align: center;
     padding: 10px;
-    background-color: #3dd380;
+    background-color: #2e2e3e;
     border-radius: 5px;
 }
 
@@ -568,84 +481,126 @@ section img{
     cursor: pointer;
 }
 
-p, h1, h2 , h3 {
-    color: #fdfdfd;
-    margin-bottom: 20px;
-}
+/* Seccion de Inicio de Sesion */
 
-h1 {
-    font-family: 'Inika', serif;
-    font-size: 70px;
-    font-weight: 200;
-}
-
-h2 {
-    font-family: 'Inika', serif;
-    font-size: 32px;
-    font-weight: 50;
-}
-h3{
-    font-family: 'Inika', serif;
-    font-size: 32px;
-    font-weight: 50;
-}
-
-p {
+.iniciodesesion {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-/* Services list styles */
-#servicios ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-#servicios li {
-    margin-bottom: 10px;
+.Iniciodesesion2 {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-#servicios li::before {
-    content: "•";
-    color: #3dd380;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+.Iniciodesesion2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Seccion de Ayuda */
-footer {
-    background-color: #08c86b;
-    color: white;
-    padding: 20px;
+.CUADROINICIOSESION {
+    
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 23, 36, 0.993);
+    padding: 90px;
+    border-radius: 10px;
+    box-shadow: 0 0 70px (#02522a);
+    width: 50vw;
+}
+
+.CUADROINICIOSESION2 {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
-footer .footer-content {
-    display: block;
-    justify-content: space-between;
-    gap: 20px;
+.CUADROINICIOSESION2 h1 {
+    font-size: 24px;
+    color: #048f49;
+}       
+
+.CUADROINICIOSESION2 form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.CUADROINICIOSESION2 label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.CUADROINICIOSESION2 input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.CUADROINICIOSESION2 button {
+    padding: 10px;
+    font-size: 18px;
+    font-style: bold;
+    background-color: #3dd380;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.CUADROINICIOSESION2 button:hover {
+    background-color: #02522a;
+}
+
+.inicio2{
+    font-size: 30px;
+    font-family: inika;
+    color: #048f49;
+}
+
+.InicioBoton{
+    font-size: 30px;
+    font-family: inika;
+    color: #07b960;
+}
+.input-registro {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    color: #2e2e3e;
+    font-weight: bold;
 }
 
 
-footer .footer-content .right {
-    text-align: left;
+.contacto-contenido {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.contacto-izquierda, .contacto-imagen, .contacto-derecha {
+    padding: 0,5px;
+    border: 0px solid #ccc;
+    flex: 0.5px; /* Opcional: Ajusta este valor según necesites para el tamaño de cada box */
+    text-align: center; /* Centra el contenido de cada box */
 }
 
 .contacto-imagen {
-    display: none;
-    width: 30%; /* Tamaño original */
-    transition: transform 0.3s ease; /* Transición suave */
-    
+    flex: 5px; /* Ajusta la imagen para que sea más grande, si es necesario */
+   
 }
 
-
-.footer-content p{
-    margin-bottom: 10px;
-    font-size: 20px;
-    
-}
 /* Sección de formulario de agregar clases */
 
 
@@ -656,9 +611,9 @@ footer .footer-content .right {
 }
 
 form {
-    background-color: #14a45c;
+    background-color: #02522a;
     padding: 20px;
-    border: 1px solid #0c6036;
+    border: 1px solid #048f49;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -672,6 +627,7 @@ form {
 
 label {
     margin-right: 10px;
+    color: white;
 }
 
 input, select, button {
@@ -706,7 +662,7 @@ button:hover {
     width: max-content;
     border-collapse: collapse;
     margin: auto;
-    color: #000;
+    color: white;
 }
 table {
     
@@ -716,6 +672,7 @@ table {
     border-collapse: collapse;
     text-align: center;
     margin: auto;
+   
     
     
 }
@@ -728,117 +685,258 @@ table, th, td {
 th, td {
     padding: 10px;
     text-align: center;
+    
 }
 
 .hidden {
     display: none;
 }
 
+/* AJUSTES DE TEXTO! */
 
+h1, h2 {
+    color: #fdfdfd;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Inika', serif;
+    font-size: 70px;
+    font-weight: 200;
+}
+
+h2 {
+    font-family: 'Inika', serif;
+    font-size: 32px;
+    font-weight: 50;
+}
+
+p {
+    align-items: center;
+}
+
+h1 a {
+    color: #02522a; /* Color del enlace */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+h1 a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
+
+/* Services list styles */
+#servicios ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#servicios li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#servicios li::before {
+    content: "•";
+    color: #e8491d;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+/* Seccion de Ayuda */
+footer {
+    background-color: #048f49;
+    padding: 20px 0;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-content .contacto-imagen {
+    
+    width: 200px; /* Tamaño original */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.footer-content .left {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content .right {
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content p{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
 
 /* Responsive design */
+/* Responsive Styles */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    nav ul li {
-        margin-bottom: 10px;
-    }
+    .carousel {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 70px;
 
-    .inicio{
-        width: 20 px;
+        
+        padding-left: 0px;
+        padding-right: 0px;
+        display:fit-content;
+        align-content: center;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        
+        
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 0 100px rgb(0, 0, 0);
+        position: relative;
     }
-
-    .contacto-contenido {
-        flex-direction: column;
-        position: static; /* Restablece el comportamiento en pantallas pequeñas */
-    }
-
-    .contacto-derecha, .contacto-izquierda, .contacto-imagen {
-        width: 100%;
-    }
-
-    .contacto-imagen {
-        position: static; /* Hace que la imagen sea centrada en el flujo natural */
-        transform: none; /* Elimina la transformación */
-    }
-    footer .footer-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .contacto-imagen{
-        display: none;
-        }
 
     header .contenedor {
         flex-direction: column;
         gap: 10px;
+        height: 257px;
     }
 
     header nav ul {
         flex-direction: column;
         gap: 10px;
     }
+    
+
+     footer .contacto-imagen{
+     flex-basis: 60px;
+    }
 
     footer .footer-content {
         flex-direction: column;
         gap: 10px;
+        
     }
+
+    .footer-content p {
+        font-size: 0.6rem;      
+    }
+
+    .footer-content .right {
+
+        width:  90%;
+    }
+
+    .footer-content .left {
+
+        width:  90%;
+    }
+    .footer-content {
+        align-items: center;
+    }
+
 
     .registro-section .input-registro {
         width: 90%;
     }
-    .agenda-section{
-        display: none;
-    }
 
-   .contenedor{
-    display: none;
-   }
-}
-
-
-
-@media (max-width: 480px) {
     
-.dropdown{
-            display: none }
-}
-.inicio{
-    width: 20 px;
-}
-@media (min-width: 768px){
-    .TablaClase2{
-        display: none;
+    .perfil-section {
+    
+        text-align: center;
+        padding-top : 200px;
     }
-    .agenda-formulario{
-        display: none;
+
+    .Perfil img{
+
+        scale: 0.8;
     }
-}
-
-
-
-
-/* Ocultar en pantallas menores a 768px (tabletas y móviles) */
-@media (max-width: 768px) {
-    .Perfil {
-        display: none;
+    .CUADROINICIOSESION {    
+        left: 10%;
+        width: 80vw;
+        padding: 15%;
+    }
+    .TituloInicio h1{
+        font-size: 40px;
+        
+        
+    }
+    .TituloInicio h2{
+        font-size: 20px;
+        padding-bottom: 0px;
+        
+    }
+    .FraseMotivacional h1{
+        font-size: 40px;
+        
+        
+    }
+    .FraseMotivacional h2{
+        font-size: 20px;
+        padding-bottom: 0px;
+        
     }
     
-    .contacto {
-        display: none;
-    }
+    
 }
+    @media (max-width: 768px){
+        .agenda-section{
+            display: none;
+        }
+    }
+    @media (max-width: 480px) {
+        header .contenedor {
+            
+            height: 207px;
+        }
+
+        header nav ul li a {
+            font-size: 0.6rem;
+        }
+    
+        header nav ul li{
+    
+            width: 100px;
+            height: 30px;
+        }
+        header .LOGO img{
+    
+            height: 50px;
+    
+        }
+    
+        .registro-section h2 {
+            font-size: 1.5rem;
+        }
+    
+        .registro-section .btn-confirmar {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+    
+        .footer-content .contacto-imagen {
+    
+            width: 100px; /* Tamaño original */
+            transition: transform 0.3s ease; /* Transición suave */
+            max-height: 100px;
+        
+        }
+        
+    }
+
 
 
 @keyframes slide {
-    0% { transform: translateX(0%); }
-    10% { transform: translateX(33%); }
-    23% { transform: translateX(-33%); }
-    66% { transform: translateX(-20%); }
-    100% { transform: translateX(0%); }
+    0% { transform: translateX(95%); }
+    33% { transform: translateX(0); }
+    66% { transform: translateX(-95%);}
+    100% { transform: translateX(95%);}
 }
-
-

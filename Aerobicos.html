@@ -29,12 +29,12 @@
                     <li><a href="#AGENDA" class="btn">AGENDA</a></li>
                     <style>
                         #AGENDA {
-                          scroll-margin-top: 60px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
+                          scroll-margin-top: 127px; /* Ajusta el valor según el tamaño del header o el espacio deseado */
                         }
                     </style>
                     
                     <li class="dropdown">
-                        <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <a href="#Deportes" onclick="toggleDropdown(event)">DEPORTES <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="box.html">BOXEO</a></li>
                             <li><a href="Aerobicos.html">AEROBICOS</a></li>
@@ -246,23 +246,24 @@
       
         
                 
+    <!-- Sección de Ayuda -->
     <footer>
-        <section id="contacto">            
-            <div class="contacto-contenido">
-                <div class="contacto-derecha">
-                    <p>Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros.</p>
-                    <p>Email: info@ejemplo.com</p>
-                </div>
-                <div class="contacto-imagen">
-                    <img src="logo.png" alt="Imagen de contacto">
-                </div>
-                <div class="contacto-izquierda">
-                    <p>Teléfono: +34 123 456 789</p>
-                    <p>Dirección: Calle Ejemplo, 123, 28001 Madrid, España</p>
-                </div>
+        <div id="contacto"class="footer-content">
+            <div class="left">
+                <p>¿Tienes alguna duda? Nosotros te la podemos resolver.<br>
+                Puedes acercarte a nuestros canales de comunicación.</p>
             </div>
-        </section>
-    </footer>  
+            <div class="contacto-imagen">
+                <img src="logo.png" alt="Imagen de contacto">
+            </div>
+            <div class="right">
+                <p>Nos encuentras en nuestras redes sociales como:</p>
+                <p>@CuentaFalsa_Trabajo</p>
+                <p>Correo: XxDestroyer777Xx@gmail.com</p>
+            </div>
+        </div>
+
+    </footer>
         
     </main>
 </body>

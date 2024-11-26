@@ -25,11 +25,18 @@
                         }
                       </style>
                     <li class="dropdown">
-                        <a href="#Deportes">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <a href="#Deportes" onclick="toggleDropdown(event)">DEPORTES <span class="arrow">&#9662;</span></a>
+                        <script>
+                            function toggleDropdown(event) {
+                            event.preventDefault(); // Previene el comportamiento por defecto del enlace
+                            const dropdown = event.currentTarget.parentElement;
+                            dropdown.classList.toggle('active');
+                            }
+                        </script>
                         <ul class="dropdown-menu">
                             <li><a href="box.html">BOXEO</a></li>
                             <li><a href="Aerobicos.html">AEROBICOS</a></li>
-                            <li><a href="pesas.html">PESAS</a></li>
+                            <li><a href="Pesas.html">PESAS</a></li>
                         </ul>
                     </li> 
                 </ul>
